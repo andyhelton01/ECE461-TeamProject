@@ -1,3 +1,2 @@
 Team Members:
-Alec Pannunzio
-Andrew Helton
+Alec Pannunzio Bazim Azeem Andrew Helton
