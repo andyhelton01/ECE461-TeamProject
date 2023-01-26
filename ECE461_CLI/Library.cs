@@ -17,15 +17,14 @@ namespace ECE461_CLI
 		}
 
 		protected float CalculateScore()
-		{
-			// NOTE: this should be called after child.CalculateScore();
-			// metrics.Add();
-			netScore = new NetScore(this);
-			
+		{ 
 			foreach (Metric m in metrics)
 			{
 				m.Calculate();
 			}
+
+			netScore = new NetScore(this);
+
 			netScore.Calculate();
 			return netScore.score;
 		}
@@ -83,12 +82,24 @@ namespace ECE461_CLI
 			// metrics.Add(new Correctness(this));
 		}
 
+	}
 
-		protected new float CalculateScore()
+	public class NPMUrlLibrary : UrlLibrary
+	{
+		/// <summary>
+		/// this is a library that is hosted on npm
+		/// </summary>
+		public NPMUrlLibrary(string url) : base(url)
 		{
-			
 
-			return base.CalculateScore();
+			// hit api and download all needed data
+			// TODO
+
+			// add metrics to metric list 
+			// metrics.Add(new Correctness(this));
+			// metrics.Add(new Correctness(this));
+			// metrics.Add(new Correctness(this));
+			// metrics.Add(new Correctness(this));
 		}
 
 	}

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "hello world"
+
+echo "installing stuff..."
+
+sleep 3
+
+echo "hacking your computer..."
+sleep 5
+
+echo "thank you for your personal information!"

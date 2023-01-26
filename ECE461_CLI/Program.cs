@@ -2,7 +2,7 @@
 
 namespace ECE461_CLI
 {
-	class CLI
+	class Program
 	{
 		static void Main(string[] args)
 		{
