@@ -42,9 +42,13 @@
 			float runningSum = 0;
 			float divisor = 0;
 			foreach (Metric m in parentLibrary.metrics) {
+				if (m is NetScore) continue; // dont try to count ourselves
+
 				runningSum += m.weight * m.score;
 				divisor += m.weight;
 			}
+
+			if (divisor == 0) divisor = 1; // avoid a divide by zero (most likely because this lib has no metrics other than netscore)
 
 			this.score = runningSum / divisor;
 		}
