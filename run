@@ -1,49 +1,34 @@
 #!/bin/bash
 
-echo "hello world"
-
-echo "installing hacking software..."
-sleep 1
-
-# installation procedure
-ubuntu_release=$(lsb_release -d | sed 's/.*Ubuntu \(\)/\1/g')
-
-if [[ ${ubuntu_release} == *20.04* ]]; then
-    wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-    sudo dpkg -i packages-microsoft-prod.deb
-    rm packages-microsoft-prod.deb
-
-    sudo apt-get update && \
-    sudo apt-get install -y dotnet-sdk-6.0
-    sudo apt-get update && \
-    sudo apt-get install -y aspnetcore-runtime-6.0
-fi 
-
-if [[ ${ubuntu_release} == *22.04* ]]; then
-    echo "Ubuntu 22.04 is not officially supported! this will probably not work"
-    sleep 3
-    
-    sudo apt update
-    sudo apt install -y dotnet-sdk-6.0
-    sudo apt-get install -y dotnet-runtime-6.0
- 
-fi
 
 cd ./ECE461_CLI
 
-
-echo "Deleting your files..."
-dotnet clean 
-
-
-echo "hacking your computer..."
-# compile process 
-
-dotnet build
-
-echo "thank you for your personal information!"
-echo "executing virus..."
-# mono ./ECE461_CLI/bin/Debug/netcoreapp3.1/ECE461_CLI.exe
-dotnet run
+if [[ $1 == "help" ]]
+then
+    echo "possible commands: help install uninstall build clean run"
+elif [[ $1 == "install" ]]
+then
+    chmod +x ../scripts/install_dependancies.sh
+    ../scripts/install_dependancies.sh
+elif [[ $1 == "uninstall" ]]
+then
+    chmod +x ../scripts/uninstall_dependancies.sh
+    ../scripts/uninstall_dependancies.sh
+elif [[ $1 == "build" ]]
+then
+    echo "hacking your computer..."
+    # compile process 
+    dotnet build
+    echo "successfully hacked"
+elif [[ $1 == "clean" ]]
+then
+    echo "Deleting your files..."
+    dotnet clean
+else
+    echo "thank you for your personal information!"
+    echo "executing virus..."
+    # run process
+    dotnet run "$0"
+fi
 
 

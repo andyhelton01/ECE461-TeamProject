@@ -13,7 +13,7 @@ namespace ECE461_CLI
 		public NetScore netScore;
 		public Library()
 		{
-			
+
 		}
 
 		protected float CalculateScore()
