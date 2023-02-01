@@ -2,7 +2,6 @@
 /home/apun1/ECE461-TeamProject/ECE461_CLI/bin/Debug/net6.0/ECE461_CLI.deps.json
 /home/apun1/ECE461-TeamProject/ECE461_CLI/bin/Debug/net6.0/ECE461_CLI.runtimeconfig.json
 /home/apun1/ECE461-TeamProject/ECE461_CLI/bin/Debug/net6.0/ECE461_CLI.dll
-/home/apun1/ECE461-TeamProject/ECE461_CLI/bin/Debug/net6.0/ref/ECE461_CLI.dll
 /home/apun1/ECE461-TeamProject/ECE461_CLI/bin/Debug/net6.0/ECE461_CLI.pdb
 /home/apun1/ECE461-TeamProject/ECE461_CLI/bin/Debug/net6.0/LibGit2Sharp.dll
 /home/apun1/ECE461-TeamProject/ECE461_CLI/bin/Debug/net6.0/Newtonsoft.Json.dll
@@ -30,3 +29,4 @@
 /home/apun1/ECE461-TeamProject/ECE461_CLI/obj/Debug/net6.0/ref/ECE461_CLI.dll
 /home/apun1/ECE461-TeamProject/ECE461_CLI/obj/Debug/net6.0/ECE461_CLI.pdb
 /home/apun1/ECE461-TeamProject/ECE461_CLI/obj/Debug/net6.0/ECE461_CLI.genruntimeconfig.cache
+/home/apun1/ECE461-TeamProject/ECE461_CLI/obj/Debug/net6.0/refint/ECE461_CLI.dll

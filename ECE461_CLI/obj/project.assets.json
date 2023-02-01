@@ -8,10 +8,14 @@
           "LibGit2Sharp.NativeBinaries": "[2.0.315-alpha.0.9]"
         },
         "compile": {
-          "lib/netcoreapp3.1/LibGit2Sharp.dll": {}
+          "lib/netcoreapp3.1/LibGit2Sharp.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.1/LibGit2Sharp.dll": {}
+          "lib/netcoreapp3.1/LibGit2Sharp.dll": {
+            "related": ".xml"
+          }
         }
       },
       "LibGit2Sharp.NativeBinaries/2.0.315-alpha.0.9": {
@@ -72,19 +76,27 @@
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Octokit/5.0.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Octokit.dll": {}
+          "lib/netstandard2.0/Octokit.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Octokit.dll": {}
+          "lib/netstandard2.0/Octokit.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Octokit.GraphQL/0.2.0-beta": {
@@ -93,12 +105,20 @@
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
-          "lib/netstandard2.0/Octokit.GraphQL.Core.dll": {},
-          "lib/netstandard2.0/Octokit.GraphQL.dll": {}
+          "lib/netstandard2.0/Octokit.GraphQL.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Octokit.GraphQL.dll": {
+            "related": ".Core.xml;.xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Octokit.GraphQL.Core.dll": {},
-          "lib/netstandard2.0/Octokit.GraphQL.dll": {}
+          "lib/netstandard2.0/Octokit.GraphQL.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Octokit.GraphQL.dll": {
+            "related": ".Core.xml;.xml"
+          }
         }
       }
     }
@@ -272,16 +292,31 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.13, 6.0.13]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[6.0.13, 6.0.13]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.13, 6.0.13]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.113/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
       }
     }
   }

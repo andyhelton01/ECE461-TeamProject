@@ -15,6 +15,8 @@ namespace ECE461_CLI
 			Library testLib = new GitUrlLibrary("https://github.com/andyhelton01/ECE461-TeamProject");
 			Console.WriteLine(testLib);
 
+			Library npmTestLib = UrlLibrary.GetFromNpmUrl("https://www.npmjs.com/package/winston");
+			Console.WriteLine(testLib);
 		}
 	}
 }
