@@ -14,14 +14,10 @@
           "LibGit2Sharp.NativeBinaries": "[2.0.315-alpha.0.9]"
         },
         "compile": {
-          "lib/netcoreapp3.1/LibGit2Sharp.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp3.1/LibGit2Sharp.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/LibGit2Sharp.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp3.1/LibGit2Sharp.dll": {}
         }
       },
       "LibGit2Sharp.NativeBinaries/2.0.315-alpha.0.9": {
@@ -232,9 +228,7 @@
           "lib/netcoreapp2.1/Microsoft.TestPlatform.Utilities.dll": {},
           "lib/netcoreapp2.1/Microsoft.VisualStudio.TestPlatform.Common.dll": {},
           "lib/netcoreapp2.1/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll": {},
-          "lib/netcoreapp2.1/testhost.dll": {
-            "related": ".deps.json"
-          }
+          "lib/netcoreapp2.1/testhost.dll": {}
         },
         "runtime": {
           "lib/netcoreapp2.1/Microsoft.TestPlatform.CommunicationUtilities.dll": {},
@@ -244,9 +238,7 @@
           "lib/netcoreapp2.1/Microsoft.TestPlatform.Utilities.dll": {},
           "lib/netcoreapp2.1/Microsoft.VisualStudio.TestPlatform.Common.dll": {},
           "lib/netcoreapp2.1/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll": {},
-          "lib/netcoreapp2.1/testhost.dll": {
-            "related": ".deps.json"
-          }
+          "lib/netcoreapp2.1/testhost.dll": {}
         },
         "resource": {
           "lib/netcoreapp2.1/cs/Microsoft.TestPlatform.CommunicationUtilities.resources.dll": {
@@ -389,27 +381,19 @@
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "NuGet.Frameworks/5.11.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/NuGet.Frameworks.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/NuGet.Frameworks.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/NuGet.Frameworks.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/NuGet.Frameworks.dll": {}
         }
       },
       "NUnit/3.13.3": {
@@ -418,14 +402,10 @@
           "NETStandard.Library": "2.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/nunit.framework.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/nunit.framework.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/nunit.framework.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/nunit.framework.dll": {}
         },
         "build": {
           "build/NUnit.props": {}
@@ -443,14 +423,10 @@
       "Octokit/5.0.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Octokit.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Octokit.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Octokit.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Octokit.dll": {}
         }
       },
       "Octokit.GraphQL/0.2.0-beta": {
@@ -459,33 +435,21 @@
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
-          "lib/netstandard2.0/Octokit.GraphQL.Core.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/Octokit.GraphQL.dll": {
-            "related": ".Core.xml;.xml"
-          }
+          "lib/netstandard2.0/Octokit.GraphQL.Core.dll": {},
+          "lib/netstandard2.0/Octokit.GraphQL.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Octokit.GraphQL.Core.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/Octokit.GraphQL.dll": {
-            "related": ".Core.xml;.xml"
-          }
+          "lib/netstandard2.0/Octokit.GraphQL.Core.dll": {},
+          "lib/netstandard2.0/Octokit.GraphQL.dll": {}
         }
       },
       "System.Reflection.Metadata/1.6.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/System.Reflection.Metadata.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/System.Reflection.Metadata.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/System.Reflection.Metadata.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/System.Reflection.Metadata.dll": {}
         }
       },
       "ECE461_CLI/1.0.0": {
@@ -1486,39 +1450,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/home/shay/a/afpannun/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Academics\\University\\2023-Spring\\ECE 46100\\Project\\ECE461-TeamProject\\ECE461_CLI.Tests\\ECE461_CLI.Tests.csproj",
+      "projectUniqueName": "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/ECE461_CLI.Tests.csproj",
       "projectName": "ECE461_CLI.Tests",
-      "projectPath": "D:\\Academics\\University\\2023-Spring\\ECE 46100\\Project\\ECE461-TeamProject\\ECE461_CLI.Tests\\ECE461_CLI.Tests.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Academics\\University\\2023-Spring\\ECE 46100\\Project\\ECE461-TeamProject\\ECE461_CLI.Tests\\obj\\",
+      "projectPath": "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/ECE461_CLI.Tests.csproj",
+      "packagesPath": "/home/shay/a/afpannun/.nuget/packages/",
+      "outputPath": "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/shay/a/afpannun/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Academics\\University\\2023-Spring\\ECE 46100\\Project\\ECE461-TeamProject\\ECE461_CLI\\ECE461_CLI.csproj": {
-              "projectPath": "D:\\Academics\\University\\2023-Spring\\ECE 46100\\Project\\ECE461-TeamProject\\ECE461_CLI\\ECE461_CLI.csproj"
+            "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj": {
+              "projectPath": "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj"
             }
           }
         }
@@ -1560,8 +1517,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -1570,7 +1526,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.113/RuntimeIdentifierGraph.json"
       }
     }
   }

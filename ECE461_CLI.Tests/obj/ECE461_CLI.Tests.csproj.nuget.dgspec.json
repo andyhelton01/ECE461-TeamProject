@@ -1,39 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Academics\\University\\2023-Spring\\ECE 46100\\Project\\ECE461-TeamProject\\ECE461_CLI.Tests\\ECE461_CLI.Tests.csproj": {}
+    "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/ECE461_CLI.Tests.csproj": {}
   },
   "projects": {
-    "D:\\Academics\\University\\2023-Spring\\ECE 46100\\Project\\ECE461-TeamProject\\ECE461_CLI.Tests\\ECE461_CLI.Tests.csproj": {
+    "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/ECE461_CLI.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Academics\\University\\2023-Spring\\ECE 46100\\Project\\ECE461-TeamProject\\ECE461_CLI.Tests\\ECE461_CLI.Tests.csproj",
+        "projectUniqueName": "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/ECE461_CLI.Tests.csproj",
         "projectName": "ECE461_CLI.Tests",
-        "projectPath": "D:\\Academics\\University\\2023-Spring\\ECE 46100\\Project\\ECE461-TeamProject\\ECE461_CLI.Tests\\ECE461_CLI.Tests.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Academics\\University\\2023-Spring\\ECE 46100\\Project\\ECE461-TeamProject\\ECE461_CLI.Tests\\obj\\",
+        "projectPath": "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/ECE461_CLI.Tests.csproj",
+        "packagesPath": "/home/shay/a/afpannun/.nuget/packages/",
+        "outputPath": "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/shay/a/afpannun/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Academics\\University\\2023-Spring\\ECE 46100\\Project\\ECE461-TeamProject\\ECE461_CLI\\ECE461_CLI.csproj": {
-                "projectPath": "D:\\Academics\\University\\2023-Spring\\ECE 46100\\Project\\ECE461-TeamProject\\ECE461_CLI\\ECE461_CLI.csproj"
+              "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj": {
+                "projectPath": "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj"
               }
             }
           }
@@ -75,8 +69,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -85,32 +78,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.113/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Academics\\University\\2023-Spring\\ECE 46100\\Project\\ECE461-TeamProject\\ECE461_CLI\\ECE461_CLI.csproj": {
+    "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Academics\\University\\2023-Spring\\ECE 46100\\Project\\ECE461-TeamProject\\ECE461_CLI\\ECE461_CLI.csproj",
+        "projectUniqueName": "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj",
         "projectName": "ECE461_CLI",
-        "projectPath": "D:\\Academics\\University\\2023-Spring\\ECE 46100\\Project\\ECE461-TeamProject\\ECE461_CLI\\ECE461_CLI.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Academics\\University\\2023-Spring\\ECE 46100\\Project\\ECE461-TeamProject\\ECE461_CLI\\obj\\",
+        "projectPath": "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj",
+        "packagesPath": "/home/shay/a/afpannun/.nuget/packages/",
+        "outputPath": "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/shay/a/afpannun/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -148,8 +135,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -158,7 +144,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.113/RuntimeIdentifierGraph.json"
         }
       }
     }

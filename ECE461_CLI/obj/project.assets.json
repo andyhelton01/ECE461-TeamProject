@@ -8,14 +8,10 @@
           "LibGit2Sharp.NativeBinaries": "[2.0.315-alpha.0.9]"
         },
         "compile": {
-          "lib/netcoreapp3.1/LibGit2Sharp.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp3.1/LibGit2Sharp.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/LibGit2Sharp.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp3.1/LibGit2Sharp.dll": {}
         }
       },
       "LibGit2Sharp.NativeBinaries/2.0.315-alpha.0.9": {
@@ -76,27 +72,19 @@
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "Octokit/5.0.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Octokit.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Octokit.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Octokit.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Octokit.dll": {}
         }
       },
       "Octokit.GraphQL/0.2.0-beta": {
@@ -105,20 +93,12 @@
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
-          "lib/netstandard2.0/Octokit.GraphQL.Core.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/Octokit.GraphQL.dll": {
-            "related": ".Core.xml;.xml"
-          }
+          "lib/netstandard2.0/Octokit.GraphQL.Core.dll": {},
+          "lib/netstandard2.0/Octokit.GraphQL.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Octokit.GraphQL.Core.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/Octokit.GraphQL.dll": {
-            "related": ".Core.xml;.xml"
-          }
+          "lib/netstandard2.0/Octokit.GraphQL.Core.dll": {},
+          "lib/netstandard2.0/Octokit.GraphQL.dll": {}
         }
       }
     }
@@ -237,19 +217,19 @@
     ]
   },
   "packageFolders": {
-    "/home/apun1/.nuget/packages/": {}
+    "/home/shay/a/afpannun/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/apun1/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj",
+      "projectUniqueName": "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj",
       "projectName": "ECE461_CLI",
-      "projectPath": "/home/apun1/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj",
-      "packagesPath": "/home/apun1/.nuget/packages/",
-      "outputPath": "/home/apun1/ECE461-TeamProject/ECE461_CLI/obj/",
+      "projectPath": "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj",
+      "packagesPath": "/home/shay/a/afpannun/.nuget/packages/",
+      "outputPath": "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/apun1/.nuget/NuGet/NuGet.Config"
+        "/home/shay/a/afpannun/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -292,31 +272,16 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.linux-x64",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.113/RuntimeIdentifierGraph.json"
       }
     }
   }

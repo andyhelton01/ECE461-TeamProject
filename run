@@ -24,6 +24,10 @@ elif [[ $1 == "clean" ]]
 then
     echo "Deleting your files..."
     dotnet clean
+elif [[ $1 == "test" ]]
+then
+    cd ..
+    dotnet test
 else
     echo "thank you for your personal information!"
     echo "executing virus..."

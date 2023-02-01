@@ -1,120 +1,239 @@
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\CoverletSourceRootsMapping
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\testhost.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ECE461_CLI.deps.json
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ECE461_CLI.runtimeconfig.json
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ECE461_CLI.exe
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\testhost.exe
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\NUnit3.TestAdapter.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\NUnit3.TestAdapter.pdb
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\nunit.engine.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\nunit.engine.api.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\nunit.engine.core.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\testcentric.engine.metadata.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ECE461_CLI.Tests.deps.json
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ECE461_CLI.Tests.runtimeconfig.json
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ECE461_CLI.Tests.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ECE461_CLI.Tests.pdb
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\LibGit2Sharp.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\Microsoft.TestPlatform.CoreUtilities.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\Microsoft.TestPlatform.CommunicationUtilities.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\Microsoft.TestPlatform.CrossPlatEngine.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\Microsoft.TestPlatform.Utilities.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.Common.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\Newtonsoft.Json.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\NuGet.Frameworks.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\nunit.framework.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\Octokit.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\Octokit.GraphQL.Core.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\Octokit.GraphQL.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\de\Microsoft.TestPlatform.CoreUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\de\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\es\Microsoft.TestPlatform.CoreUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\es\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\fr\Microsoft.TestPlatform.CoreUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\fr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\it\Microsoft.TestPlatform.CoreUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\it\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ja\Microsoft.TestPlatform.CoreUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ja\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ko\Microsoft.TestPlatform.CoreUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ko\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\pl\Microsoft.TestPlatform.CoreUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\pl\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\pt-BR\Microsoft.TestPlatform.CoreUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\pt-BR\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ru\Microsoft.TestPlatform.CoreUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ru\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\tr\Microsoft.TestPlatform.CoreUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\tr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\zh-Hans\Microsoft.TestPlatform.CoreUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\zh-Hans\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CoreUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\cs\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\cs\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\cs\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\de\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\de\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\de\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\es\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\es\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\es\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\fr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\fr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\fr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\it\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\it\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\it\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ja\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ja\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ja\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ko\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ko\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ko\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\pl\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\pl\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\pl\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\pt-BR\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\pt-BR\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\pt-BR\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ru\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ru\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ru\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\tr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\tr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\tr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\zh-Hans\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\zh-Hans\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\zh-Hans\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\runtimes\linux-arm\native\libgit2-b7bad55.so
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\runtimes\linux-arm64\native\libgit2-b7bad55.so
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\runtimes\linux-musl-arm\native\libgit2-b7bad55.so
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\runtimes\linux-musl-arm64\native\libgit2-b7bad55.so
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\runtimes\linux-musl-x64\native\libgit2-b7bad55.so
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\runtimes\linux-x64\native\libgit2-b7bad55.so
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\runtimes\osx-arm64\native\libgit2-b7bad55.dylib
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\runtimes\osx-x64\native\libgit2-b7bad55.dylib
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\runtimes\win-arm64\native\git2-b7bad55.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\runtimes\win-x64\native\git2-b7bad55.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\runtimes\win-x86\native\git2-b7bad55.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ECE461_CLI.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\bin\Debug\net6.0\ECE461_CLI.pdb
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\obj\Debug\net6.0\ECE461_CLI.Tests.csproj.AssemblyReference.cache
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\obj\Debug\net6.0\ECE461_CLI.Tests.GeneratedMSBuildEditorConfig.editorconfig
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\obj\Debug\net6.0\ECE461_CLI.Tests.AssemblyInfoInputs.cache
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\obj\Debug\net6.0\ECE461_CLI.Tests.AssemblyInfo.cs
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\obj\Debug\net6.0\ECE461_CLI.Tests.csproj.CoreCompileInputs.cache
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\obj\Debug\net6.0\ECE461_CLI.Tests.csproj.CopyComplete
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\obj\Debug\net6.0\ECE461_CLI.Tests.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\obj\Debug\net6.0\refint\ECE461_CLI.Tests.dll
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\obj\Debug\net6.0\ECE461_CLI.Tests.pdb
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\obj\Debug\net6.0\ECE461_CLI.Tests.genruntimeconfig.cache
-D:\Academics\University\2023-Spring\ECE 46100\Project\ECE461-TeamProject\ECE461_CLI.Tests\obj\Debug\net6.0\ref\ECE461_CLI.Tests.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/CoverletSourceRootsMapping
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/testhost.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI.deps.json
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI.runtimeconfig.json
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI.exe
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/testhost.exe
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/NUnit3.TestAdapter.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/NUnit3.TestAdapter.pdb
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/nunit.engine.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/nunit.engine.api.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/nunit.engine.core.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/testcentric.engine.metadata.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI.Tests.deps.json
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI.Tests.runtimeconfig.json
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI.Tests.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI.Tests.pdb
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/LibGit2Sharp.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Microsoft.TestPlatform.CoreUtilities.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Microsoft.TestPlatform.PlatformAbstractions.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Microsoft.TestPlatform.CommunicationUtilities.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Microsoft.TestPlatform.CrossPlatEngine.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Microsoft.TestPlatform.Utilities.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Microsoft.VisualStudio.TestPlatform.Common.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Newtonsoft.Json.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/NuGet.Frameworks.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/nunit.framework.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Octokit.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Octokit.GraphQL.Core.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Octokit.GraphQL.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/cs/Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/cs/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/de/Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/de/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/es/Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/es/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/fr/Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/fr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/it/Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/it/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ja/Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ja/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ko/Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ko/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pl/Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pl/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pt-BR/Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pt-BR/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ru/Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ru/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/tr/Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/tr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hans/Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hant/Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/cs/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/cs/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/cs/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/de/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/de/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/de/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/es/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/es/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/es/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/fr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/fr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/fr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/it/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/it/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/it/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ja/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ja/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ja/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ko/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ko/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ko/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pl/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pl/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pl/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pt-BR/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pt-BR/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pt-BR/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ru/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ru/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ru/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/tr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/tr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/tr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hans/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hans/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hant/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hant/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/linux-arm/native/libgit2-b7bad55.so
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/linux-arm64/native/libgit2-b7bad55.so
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/linux-musl-arm/native/libgit2-b7bad55.so
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/linux-musl-arm64/native/libgit2-b7bad55.so
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/linux-musl-x64/native/libgit2-b7bad55.so
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/linux-x64/native/libgit2-b7bad55.so
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/osx-arm64/native/libgit2-b7bad55.dylib
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/osx-x64/native/libgit2-b7bad55.dylib
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/win-arm64/native/git2-b7bad55.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/win-x64/native/git2-b7bad55.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/win-x86/native/git2-b7bad55.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI.pdb
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.csproj.AssemblyReference.cache
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.GeneratedMSBuildEditorConfig.editorconfig
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.AssemblyInfoInputs.cache
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.AssemblyInfo.cs
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.csproj.CoreCompileInputs.cache
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.csproj.CopyComplete
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/refint/ECE461_CLI.Tests.dll
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.pdb
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.genruntimeconfig.cache
+D:/Academics/University/2023-Spring/ECE 46100/Project/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ref/ECE461_CLI.Tests.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/CoverletSourceRootsMapping
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/NUnit3.TestAdapter.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/NUnit3.TestAdapter.pdb
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/nunit.engine.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/nunit.engine.api.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/nunit.engine.core.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/testcentric.engine.metadata.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI.deps.json
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI.runtimeconfig.json
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI.Tests.deps.json
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI.Tests.runtimeconfig.json
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI.Tests.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ref/ECE461_CLI.Tests.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI.Tests.pdb
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/LibGit2Sharp.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Microsoft.TestPlatform.CoreUtilities.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Microsoft.TestPlatform.PlatformAbstractions.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Microsoft.TestPlatform.CommunicationUtilities.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Microsoft.TestPlatform.CrossPlatEngine.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Microsoft.TestPlatform.Utilities.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Microsoft.VisualStudio.TestPlatform.Common.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/testhost.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Newtonsoft.Json.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/NuGet.Frameworks.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/nunit.framework.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Octokit.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Octokit.GraphQL.Core.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/Octokit.GraphQL.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/cs/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/cs/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/de/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/de/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/es/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/es/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/fr/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/fr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/it/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/it/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ja/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ja/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ko/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ko/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pl/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pl/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pt-BR/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pt-BR/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ru/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ru/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/tr/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/tr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hans/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hant/Microsoft.TestPlatform.CoreUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/cs/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/cs/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/cs/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/de/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/de/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/de/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/es/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/es/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/es/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/fr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/fr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/fr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/it/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/it/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/it/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ja/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ja/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ja/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ko/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ko/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ko/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pl/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pl/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pl/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pt-BR/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pt-BR/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/pt-BR/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ru/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ru/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ru/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/tr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/tr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/tr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hans/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hans/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hant/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hant/Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/linux-arm/native/libgit2-b7bad55.so
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/linux-arm64/native/libgit2-b7bad55.so
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/linux-musl-arm/native/libgit2-b7bad55.so
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/linux-musl-arm64/native/libgit2-b7bad55.so
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/linux-musl-x64/native/libgit2-b7bad55.so
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/linux-x64/native/libgit2-b7bad55.so
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/osx-arm64/native/libgit2-b7bad55.dylib
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/osx-x64/native/libgit2-b7bad55.dylib
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/win-arm64/native/git2-b7bad55.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/win-x64/native/git2-b7bad55.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/runtimes/win-x86/native/git2-b7bad55.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/bin/Debug/net6.0/ECE461_CLI.pdb
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.csproj.AssemblyReference.cache
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.GeneratedMSBuildEditorConfig.editorconfig
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.AssemblyInfoInputs.cache
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.AssemblyInfo.cs
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.csproj.CoreCompileInputs.cache
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.csproj.CopyComplete
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ref/ECE461_CLI.Tests.dll
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.pdb
+/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI.Tests/obj/Debug/net6.0/ECE461_CLI.Tests.genruntimeconfig.cache

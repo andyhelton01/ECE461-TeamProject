@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/apun1/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj": {}
+    "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj": {}
   },
   "projects": {
-    "/home/apun1/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj": {
+    "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/apun1/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj",
+        "projectUniqueName": "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj",
         "projectName": "ECE461_CLI",
-        "projectPath": "/home/apun1/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj",
-        "packagesPath": "/home/apun1/.nuget/packages/",
-        "outputPath": "/home/apun1/ECE461-TeamProject/ECE461_CLI/obj/",
+        "projectPath": "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI/ECE461_CLI.csproj",
+        "packagesPath": "/home/shay/a/afpannun/.nuget/packages/",
+        "outputPath": "/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/ECE461_CLI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/apun1/.nuget/NuGet/NuGet.Config"
+          "/home/shay/a/afpannun/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -57,31 +57,16 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.13, 6.0.13]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[6.0.13, 6.0.13]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.13, 6.0.13]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.113/RuntimeIdentifierGraph.json"
         }
       }
     }

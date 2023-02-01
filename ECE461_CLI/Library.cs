@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Net.Http;
+using System.Text.Json;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 
 namespace ECE461_CLI
 {
@@ -89,6 +92,10 @@ namespace ECE461_CLI
 
 		public string url;
 
+		//note: save these instances for reuse
+		static HttpClient httpClient = new HttpClient();
+		static JsonSerializerOptions jsonOptions = new JsonSerializerOptions(JsonSerializerDefaults.Web);
+
 		public UrlLibrary(string url) : base(url) {
 			this.url = url;
 
@@ -99,19 +106,21 @@ namespace ECE461_CLI
 
 		}
 
-		public static  UrlLibrary GetFromNpmUrl(string url) {
+		public static async Task GetFromNpmUrl(string url) {
 			
 			// TODO get package name from url
 
 			string packageName = "winston";
 
 			using var client = new HttpClient();
-			var content = client.GetStringAsync("https://registry.npmjs.org/" + packageName);
 
-			Console.WriteLine(content);
+			var result = await client.GetStringAsync("https://registry.npmjs.org/" + packageName);
+			Console.WriteLine(result);
 
-			return new UrlLibrary(url);
+			
 		}
+
+
 
 		
 	}
