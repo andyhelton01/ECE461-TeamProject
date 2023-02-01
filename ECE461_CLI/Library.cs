@@ -14,7 +14,9 @@ namespace ECE461_CLI
 
 		public List<Metric> metrics = new List<Metric>();
 
-		public NetScore netScore;
+		public List<Task> calcMetricTaskQueue = new List<Task>();
+
+		public float score;
 
 		public string name;
 		public Library(string name)
@@ -23,11 +25,16 @@ namespace ECE461_CLI
 		}
 
 		
-		protected void addMetrics() {
+		public virtual void addMetrics() {
+			Console.WriteLine("parent addMetrics");
 			// NOTE child addMetrics should add its own addMetrics before calling this class!
 
-			netScore = new NetScore(this);
-			metrics.Add(netScore);
+			// asynchronously ask metrics to calculate
+			// HACK this may blow up the computer... not sure if we need to control the number of threads here
+			foreach (Metric m in metrics)
+			{
+				calcMetricTaskQueue.Add(m.Calculate());
+			}
 		}
 		protected float CalculateScore()
 		{ 
@@ -36,16 +43,34 @@ namespace ECE461_CLI
 			}
 
 			
-			foreach (Metric m in metrics)
-			{
-				
-				m.Calculate();
-			}
-
 			
 
-			netScore.Calculate();
-			return netScore.score;
+
+			// wait for tasks calculateTasks to finish
+			waitForCalculations();
+
+			// calculate a weighted average of all the scores of the other metrics
+			float runningSum = 0;
+			float divisor = 0;
+			foreach (Metric m in metrics) {
+				runningSum += m.weight * m.score;
+				divisor += m.weight;
+			}
+
+			if (divisor == 0) divisor = 1; // avoid a divide by zero (most likely because this lib has no metrics other than netscore)
+
+			this.score = runningSum / divisor;
+
+			
+		
+			return score;
+		}
+
+		public void waitForCalculations() {
+			// wait for tasks calculateTasks to finish
+			foreach(Task t in calcMetricTaskQueue) {
+				t.Wait();
+			}
 		}
 
 		/*
@@ -54,7 +79,7 @@ namespace ECE461_CLI
 		 */
 		public float GetScore()
 		{
-			return 0; 
+			return CalculateScore(); 
 		}
 
 	
@@ -82,7 +107,15 @@ namespace ECE461_CLI
 		{
 			return ToJson();
 		}
+
+		public static void LogError(string error_msg) {
+			Console.ForegroundColor = ConsoleColor.Red;
+			Console.WriteLine("[ERROR] " + error_msg);
+			Console.ForegroundColor = ConsoleColor.White;
+		}
 	}
+
+
 
 
 	public class UrlLibrary : Library {
@@ -90,7 +123,7 @@ namespace ECE461_CLI
 		/// this is a library hosted on the internet
 		/// </summary>
 
-		public string url;
+		private string url;
 
 		//note: save these instances for reuse
 		static HttpClient httpClient = new HttpClient();
@@ -101,9 +134,13 @@ namespace ECE461_CLI
 
 			// TODO give this lib a better name please
 
-			// if we can parse this into a git library
-			
+		
 
+		}
+
+		
+		public virtual string GetUrl() {
+			return url;
 		}
 
 		public static async Task GetFromNpmUrl(string url) {
@@ -115,11 +152,12 @@ namespace ECE461_CLI
 			using var client = new HttpClient();
 
 			var result = await client.GetStringAsync("https://registry.npmjs.org/" + packageName);
-			Console.WriteLine(result);
+			// Console.WriteLine(result);
 
 			
 		}
 
+		
 
 
 		
@@ -134,11 +172,21 @@ namespace ECE461_CLI
 			// hit api and download all needed data
 			// TODO
 
+			
+		}
+
+		
+		public override void addMetrics() {
+
+			Console.WriteLine("adding ResponsiveMaintainer");
+			
 			// add metrics to metric list 
+			metrics.Add(new ResponsiveMaintainer(this));
 			// metrics.Add(new Correctness(this));
 			// metrics.Add(new Correctness(this));
 			// metrics.Add(new Correctness(this));
-			// metrics.Add(new Correctness(this));
+			
+			base.addMetrics();
 		}
 
 	}
@@ -155,11 +203,23 @@ namespace ECE461_CLI
 			// TODO
 
 			// add metrics to metric list 
-			// metrics.Add(new Correctness(this));
-			// metrics.Add(new Correctness(this));
-			// metrics.Add(new Correctness(this));
-			// metrics.Add(new Correctness(this));
+
 		}
 
+	}
+
+	public class NPMGitUrlLibrary : GitUrlLibrary {
+		/// <summary>
+		/// this is a library with a npm url but is still hosted on github
+		/// </summary>
+
+		public string npmUrl;
+		public NPMGitUrlLibrary(string npmUrl, string gitUrl) : base(gitUrl) {
+			this.npmUrl = npmUrl;
+		}
+
+		public override string GetUrl() {
+			return npmUrl;
+		}
 	}
 }

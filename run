@@ -31,8 +31,9 @@ then
 else
     echo "thank you for your personal information!"
     echo "executing virus..."
+
     # run process
-    dotnet run "$0"
+    dotnet run "$@"
 fi
 
 
