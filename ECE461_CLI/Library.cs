@@ -19,6 +19,8 @@ namespace ECE461_CLI
 		public float score;
 
 		public string name;
+
+		bool isCalculated = false;
 		public Library(string name)
 		{
 			this.name = name;
@@ -26,7 +28,7 @@ namespace ECE461_CLI
 
 		
 		public virtual void addMetrics() {
-			Console.WriteLine("parent addMetrics");
+
 			// NOTE child addMetrics should add its own addMetrics before calling this class!
 
 			// asynchronously ask metrics to calculate
@@ -42,10 +44,6 @@ namespace ECE461_CLI
 				addMetrics();
 			}
 
-			
-			
-
-
 			// wait for tasks calculateTasks to finish
 			waitForCalculations();
 
@@ -60,10 +58,10 @@ namespace ECE461_CLI
 			if (divisor == 0) divisor = 1; // avoid a divide by zero (most likely because this lib has no metrics other than netscore)
 
 			this.score = runningSum / divisor;
-
 			
-		
-			return score;
+			isCalculated = true;
+			
+			return this.score;
 		}
 
 		public void waitForCalculations() {
@@ -71,6 +69,8 @@ namespace ECE461_CLI
 			foreach(Task t in calcMetricTaskQueue) {
 				t.Wait();
 			}
+
+			
 		}
 
 		/*
@@ -79,7 +79,8 @@ namespace ECE461_CLI
 		 */
 		public float GetScore()
 		{
-			return CalculateScore(); 
+			if (! isCalculated) CalculateScore();
+			return score; 
 		}
 
 	
@@ -93,7 +94,7 @@ namespace ECE461_CLI
 				CalculateScore();
 			}
 
-			string jsonBlob = "{ \"libraryName\": " + this.name + ", \"metrics\": {";
+			string jsonBlob = "{ \"libraryName\": " + this.name + ", \"libraryScore\": " + this.GetScore() + ", \"metrics\": {";
 			foreach (Metric m in metrics) {
 				jsonBlob += "{\"name\": " + m.name + ", " + "\"score\": " + m.score + "}, ";
 			}
@@ -112,6 +113,16 @@ namespace ECE461_CLI
 			Console.ForegroundColor = ConsoleColor.Red;
 			Console.WriteLine("[ERROR] " + error_msg);
 			Console.ForegroundColor = ConsoleColor.White;
+		}
+
+
+		public class LibraryComparer : IComparer<Library>
+		{
+			public int Compare(Library y, Library x)
+			{
+				
+				return x.GetScore().CompareTo(y.GetScore());
+			}
 		}
 	}
 
@@ -142,19 +153,42 @@ namespace ECE461_CLI
 		public virtual string GetUrl() {
 			return url;
 		}
+		
 
-		public static async Task GetFromNpmUrl(string url) {
-			
+		private async static Task<string> scrapeForGitUrl(string url) {
+				
 			// TODO get package name from url
-
-			string packageName = "winston";
+			string[] phrases = url.Split("/");
+			string packageName = phrases[phrases.Length-1];
 
 			using var client = new HttpClient();
 
 			var result = await client.GetStringAsync("https://registry.npmjs.org/" + packageName);
-			// Console.WriteLine(result);
 
+			// HACK this may be the least robust possible way of doing this 
+			string[] tokens = result.Split("\"");
+			foreach (string s in tokens) {
+				if (s.Contains("github.com")) {
+					return s;
+				}
+			}
+
+			return "no_url_found";
 			
+		}
+
+		public static Library GetFromNpmUrl(string url) {
+
+			// TODO scrapeForGitUrl should return a Task<string> with the git url
+			Task<string> urlScrape = scrapeForGitUrl(url);
+			urlScrape.Wait();
+			string gitUrl = urlScrape.Result;
+			// string gitUrl = "https://github.com/andyhelton01/ECE461-TeamProject"; // TODO this should be from scrapeForGitUrl
+			if (gitUrl == "no_url_found") {
+				return new NPMUrlLibrary(url);
+			}else{
+				return new NPMGitUrlLibrary(url, gitUrl);
+			}
 		}
 
 		
@@ -178,7 +212,7 @@ namespace ECE461_CLI
 		
 		public override void addMetrics() {
 
-			Console.WriteLine("adding ResponsiveMaintainer");
+
 			
 			// add metrics to metric list 
 			metrics.Add(new ResponsiveMaintainer(this));
