@@ -1,33 +1,33 @@
 # Source code
-/ECE_461_CLI/bin
-/ECE_461_CLI/obj
-/ECE_461_CLI/.vs
+/ECE461_CLI/bin
+/ECE461_CLI/obj
+/ECE461_CLI/.vs
 
-/ECE_461_CLI/bin/
-/ECE_461_CLI/obj/
-/ECE_461_CLI/.vs/
+/ECE461_CLI/bin/
+/ECE461_CLI/obj/
+/ECE461_CLI/.vs/
 
-*/ECE_461_CLI/bin
-*/ECE_461_CLI/obj
-*/ECE_461_CLI/.vs
+*/ECE461_CLI/bin
+*/ECE461_CLI/obj
+*/ECE461_CLI/.vs
 
-/ECE_461_CLI/bin/*
-/ECE_461_CLI/obj/*
-/ECE_461_CLI/.vs/*
+/ECE461_CLI/bin/*
+/ECE461_CLI/obj/*
+/ECE461_CLI/.vs/*
 
 # Test code
-/ECE_461_CLI.Tests/bin
-/ECE_461_CLI.Tests/obj
-/ECE_461_CLI.Tests/.vs
+/ECE461_CLI.Tests/bin
+/ECE461_CLI.Tests/obj
+/ECE461_CLI.Tests/.vs
 
-/ECE_461_CLI.Tests/bin/
-/ECE_461_CLI.Tests/obj/
-/ECE_461_CLI.Tests/.vs/
+/ECE461_CLI.Tests/bin/
+/ECE461_CLI.Tests/obj/
+/ECE461_CLI.Tests/.vs/
 
-*/ECE_461_CLI.Tests/bin
-*/ECE_461_CLI.Tests/obj
-*/ECE_461_CLI.Tests/.vs
+*/ECE461_CLI.Tests/bin
+*/ECE461_CLI.Tests/obj
+*/ECE461_CLI.Tests/.vs
 
-/ECE_461_CLI.Tests/bin/*
-/ECE_461_CLI.Tests/obj/*
-/ECE_461_CLI.Tests/.vs/*
+/ECE461_CLI.Tests/bin/*
+/ECE461_CLI.Tests/obj/*
+/ECE461_CLI.Tests/.vs/*
