@@ -14,20 +14,29 @@ namespace ECE461_CLI
 
 		public List<Metric> metrics = new List<Metric>();
 
-		public NetScore netScore;
+		public List<Task> calcMetricTaskQueue = new List<Task>();
+
+		public float score;
 
 		public string name;
+
+		bool isCalculated = false;
 		public Library(string name)
 		{
 			this.name = name;
 		}
 
 		
-		protected void addMetrics() {
+		public virtual void addMetrics() {
+
 			// NOTE child addMetrics should add its own addMetrics before calling this class!
 
-			netScore = new NetScore(this);
-			metrics.Add(netScore);
+			// asynchronously ask metrics to calculate
+			// HACK this may blow up the computer... not sure if we need to control the number of threads here
+			foreach (Metric m in metrics)
+			{
+				calcMetricTaskQueue.Add(m.Calculate());
+			}
 		}
 		protected float CalculateScore()
 		{ 
@@ -35,17 +44,33 @@ namespace ECE461_CLI
 				addMetrics();
 			}
 
+			// wait for tasks calculateTasks to finish
+			waitForCalculations();
+
+			// calculate a weighted average of all the scores of the other metrics
+			float runningSum = 0;
+			float divisor = 0;
+			foreach (Metric m in metrics) {
+				runningSum += m.weight * m.score;
+				divisor += m.weight;
+			}
+
+			if (divisor == 0) divisor = 1; // avoid a divide by zero (most likely because this lib has no metrics other than netscore)
+
+			this.score = runningSum / divisor;
 			
-			foreach (Metric m in metrics)
-			{
-				
-				m.Calculate();
+			isCalculated = true;
+			
+			return this.score;
+		}
+
+		public void waitForCalculations() {
+			// wait for tasks calculateTasks to finish
+			foreach(Task t in calcMetricTaskQueue) {
+				t.Wait();
 			}
 
 			
-
-			netScore.Calculate();
-			return netScore.score;
 		}
 
 		/*
@@ -54,7 +79,8 @@ namespace ECE461_CLI
 		 */
 		public float GetScore()
 		{
-			return 0; 
+			if (! isCalculated) CalculateScore();
+			return score; 
 		}
 
 	
@@ -68,7 +94,7 @@ namespace ECE461_CLI
 				CalculateScore();
 			}
 
-			string jsonBlob = "{ \"libraryName\": " + this.name + ", \"metrics\": {";
+			string jsonBlob = "{ \"libraryName\": " + this.name + ", \"libraryScore\": " + this.GetScore() + ", \"metrics\": {";
 			foreach (Metric m in metrics) {
 				jsonBlob += "{\"name\": " + m.name + ", " + "\"score\": " + m.score + "}, ";
 			}
@@ -82,7 +108,25 @@ namespace ECE461_CLI
 		{
 			return ToJson();
 		}
+
+		public static void LogError(string error_msg) {
+			Console.ForegroundColor = ConsoleColor.Red;
+			Console.WriteLine("[ERROR] " + error_msg);
+			Console.ForegroundColor = ConsoleColor.White;
+		}
+
+
+		public class LibraryComparer : IComparer<Library>
+		{
+			public int Compare(Library y, Library x)
+			{
+				
+				return x.GetScore().CompareTo(y.GetScore());
+			}
+		}
 	}
+
+
 
 
 	public class UrlLibrary : Library {
@@ -90,7 +134,7 @@ namespace ECE461_CLI
 		/// this is a library hosted on the internet
 		/// </summary>
 
-		public string url;
+		private string url;
 
 		//note: save these instances for reuse
 		static HttpClient httpClient = new HttpClient();
@@ -101,25 +145,53 @@ namespace ECE461_CLI
 
 			// TODO give this lib a better name please
 
-			// if we can parse this into a git library
-			
+		
 
 		}
 
-		public static async Task GetFromNpmUrl(string url) {
-			
-			// TODO get package name from url
+		
+		public virtual string GetUrl() {
+			return url;
+		}
+		
 
-			string packageName = "winston";
+		private async static Task<string> scrapeForGitUrl(string url) {
+				
+			// TODO get package name from url
+			string[] phrases = url.Split("/");
+			string packageName = phrases[phrases.Length-1];
 
 			using var client = new HttpClient();
 
 			var result = await client.GetStringAsync("https://registry.npmjs.org/" + packageName);
-			Console.WriteLine(result);
 
+			// HACK this may be the least robust possible way of doing this 
+			string[] tokens = result.Split("\"");
+			foreach (string s in tokens) {
+				if (s.Contains("github.com")) {
+					return s;
+				}
+			}
+
+			return "no_url_found";
 			
 		}
 
+		public static Library GetFromNpmUrl(string url) {
+
+			// TODO scrapeForGitUrl should return a Task<string> with the git url
+			Task<string> urlScrape = scrapeForGitUrl(url);
+			urlScrape.Wait();
+			string gitUrl = urlScrape.Result;
+			// string gitUrl = "https://github.com/andyhelton01/ECE461-TeamProject"; // TODO this should be from scrapeForGitUrl
+			if (gitUrl == "no_url_found") {
+				return new NPMUrlLibrary(url);
+			}else{
+				return new NPMGitUrlLibrary(url, gitUrl);
+			}
+		}
+
+		
 
 
 		
@@ -134,11 +206,21 @@ namespace ECE461_CLI
 			// hit api and download all needed data
 			// TODO
 
+			
+		}
+
+		
+		public override void addMetrics() {
+
+
+			
 			// add metrics to metric list 
+			metrics.Add(new ResponsiveMaintainer(this));
 			// metrics.Add(new Correctness(this));
 			// metrics.Add(new Correctness(this));
 			// metrics.Add(new Correctness(this));
-			// metrics.Add(new Correctness(this));
+			
+			base.addMetrics();
 		}
 
 	}
@@ -155,11 +237,23 @@ namespace ECE461_CLI
 			// TODO
 
 			// add metrics to metric list 
-			// metrics.Add(new Correctness(this));
-			// metrics.Add(new Correctness(this));
-			// metrics.Add(new Correctness(this));
-			// metrics.Add(new Correctness(this));
+
 		}
 
+	}
+
+	public class NPMGitUrlLibrary : GitUrlLibrary {
+		/// <summary>
+		/// this is a library with a npm url but is still hosted on github
+		/// </summary>
+
+		public string npmUrl;
+		public NPMGitUrlLibrary(string npmUrl, string gitUrl) : base(gitUrl) {
+			this.npmUrl = npmUrl;
+		}
+
+		public override string GetUrl() {
+			return npmUrl;
+		}
 	}
 }
