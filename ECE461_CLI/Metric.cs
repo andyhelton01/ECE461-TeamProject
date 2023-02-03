@@ -39,7 +39,7 @@ namespace ECE461_CLI
 
         public ResponsiveMaintainer(GitUrlLibrary parentLibrary) : base(parentLibrary)
         {
-            this.weight = 0;
+            this.weight = 1;
             this.name = "ResponsiveMaintainer";
         }
 
@@ -50,7 +50,7 @@ namespace ECE461_CLI
 			try {
 				// FIXME name and repo needs to be parsed from url
 				var client = new GitHubClient(new ProductHeaderValue("my-cool-cli"));
-				var tokenAuth = new Credentials("token"); // Add environment variable for token
+				var tokenAuth = new Credentials(Environment.GetEnvironmentVariable("$GITHUB_TOKEN")); // Add environment variable for token
 				client.Credentials = tokenAuth;
 
 				// Get repo using information from Library (owner and name)
@@ -62,7 +62,7 @@ namespace ECE461_CLI
 				var curDate = System.DateTimeOffset.Now;
 				var timeSinceLastCommit = curDate - lastCommitDate;
 
-				this.score = (float) Math.Exp(-timeSinceLastCommit.Days);
+				this.score = (float) Math.Exp(-0.1 * timeSinceLastCommit.Days);
 			}catch (Octokit.AuthorizationException) {
 				Library.LogError("Bad credentials. Check your access token.");
 			}

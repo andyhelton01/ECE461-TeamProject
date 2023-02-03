@@ -51,7 +51,7 @@ namespace ECE461_CLI
 				// calculate scores
 				foreach(Library lib in libraries) {
 					lib.GetScore();
-					lib.score = (float) rand.NextDouble();
+					//lib.score = (float) rand.NextDouble();
 				}
 
 				// sort libraries
