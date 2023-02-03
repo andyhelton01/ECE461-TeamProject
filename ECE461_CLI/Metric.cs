@@ -50,7 +50,7 @@ namespace ECE461_CLI
 			try {
 				// FIXME name and repo needs to be parsed from url
 				var client = new GitHubClient(new ProductHeaderValue("my-cool-cli"));
-				var tokenAuth = new Credentials(Environment.GetEnvironmentVariable("$GITHUB_TOKEN")); // Add environment variable for token
+				var tokenAuth = new Credentials(Environment.GetEnvironmentVariable("GITHUB_TOKEN")); // Add environment variable for token
 				client.Credentials = tokenAuth;
 
 				// Get repo using information from Library (owner and name)
