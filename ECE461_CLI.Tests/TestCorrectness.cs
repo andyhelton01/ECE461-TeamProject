@@ -11,13 +11,9 @@ public class CorrectnessTests
     [Test]
     public void TestHighScore()
     {
-        Library lib = new GitUrlLibrary("https://github.com/andyhelton01/ECE461-TeamProject");
-        lib.GetScore();
-
-        foreach (Metric m in lib.metrics)
-        {
-            if (m.name == "Correctness")
-                Assert.That(m.score, Is.GreaterThan(0.7));
-        }
+        GitUrlLibrary lib = new GitUrlLibrary("https://github.com/andyhelton01/ECE461-TeamProject");
+        Metric m = new Correctness(lib);
+        m.Calculate();
+        Assert.That(m.score, Is.GreaterThan(0.7));
     }
 }

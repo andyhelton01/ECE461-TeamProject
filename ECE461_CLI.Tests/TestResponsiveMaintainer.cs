@@ -11,13 +11,9 @@ public class ResponsiveMaintainerTests
     [Test]
     public void TestHighScore()
     {
-        Library lib = new GitUrlLibrary("https://github.com/andyhelton01/ECE461-TeamProject");
-        lib.GetScore();
-
-        foreach (Metric m in lib.metrics)
-        {
-            if (m.name == "ResponsiveMaintainer")
-                Assert.That(m.score, Is.GreaterThan(0.7));
-        }
+        GitUrlLibrary lib = new GitUrlLibrary("https://github.com/andyhelton01/ECE461-TeamProject");
+        Metric m = new ResponsiveMaintainer(lib);
+        m.Calculate();
+        Assert.That(m.score, Is.GreaterThan(0.7));
     }
 }
