@@ -1,6 +1,6 @@
 ﻿namespace ECE461_CLI.Tests;
 
-public class ResponsiveMaintainerTests
+public class CorrectnessTests
 {
     [SetUp]
     public void Setup()
@@ -16,7 +16,7 @@ public class ResponsiveMaintainerTests
 
         foreach (Metric m in lib.metrics)
         {
-            if (m.name == "ResponsiveMaintainer")
+            if (m.name == "Correctness")
                 Assert.That(m.score, Is.GreaterThan(0.7));
         }
     }

@@ -213,9 +213,10 @@ namespace ECE461_CLI
 		public override void addMetrics() {
 
 
-			
-			// add metrics to metric list 
-			metrics.Add(new ResponsiveMaintainer(this));
+
+            // add metrics to metric list 
+            //metrics.Add(new Correctness(this));
+            metrics.Add(new ResponsiveMaintainer(this));
 			// metrics.Add(new Correctness(this));
 			// metrics.Add(new Correctness(this));
 			// metrics.Add(new Correctness(this));
