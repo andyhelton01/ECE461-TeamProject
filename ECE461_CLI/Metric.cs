@@ -55,12 +55,43 @@ namespace ECE461_CLI
                 var tokenAuth = new Octokit.Credentials(Environment.GetEnvironmentVariable("GITHUB_TOKEN"));
                 client.Credentials = tokenAuth;
 
-                // Get repo using information from Library (owner and name)
-                // var repo = await client.Repository.Get(this.parentLibrary.owner, this.parentLibrary.name);
-                //var runs = await client.Actions.Workflows.Runs.List("octokit", "octokit.net");
-                //Console.WriteLine(runs.TotalCount);
+                var firstOneHundred = new ApiOptions
+                {
+                    PageSize = 50,
+                    PageCount = 1
+                };
+
+                var request = new WorkflowRunsRequest { };
+                // var runs = await client.Actions.Workflows.Runs.List(this.parentLibrary.owner, this.parentLibrary.name, request, firstOneHundred);
+                var runs = await client.Actions.Workflows.Runs.List("pytorch", "pytorch", request, firstOneHundred);
+
+                float score = 0;
+                int count = 0;
+                foreach (WorkflowRun r in runs.WorkflowRuns)
+                {
+                    switch (r.Status.ToString())
+                    {
+                        case "completed":
+                        case "success":
+                            score += 1;
+                            break;
+                        case "in_progress":
+                        case "queued":
+                        case "pending":
+                            score += (float) 0.7;
+                            break;
+                        case "neutral":
+                        case "skipped":
+                        case "cancelled":
+                        case "stale":
+                        case "action_required":
+                            score += (float)0.5;
+                            break;
+                    }
+                    count++;
+                }
                 
-                this.score = 1;
+                this.score = score/count;
             }
             catch (Octokit.AuthorizationException)
             {

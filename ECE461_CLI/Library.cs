@@ -215,7 +215,7 @@ namespace ECE461_CLI
 
 
             // add metrics to metric list 
-            //metrics.Add(new Correctness(this));
+            metrics.Add(new Correctness(this));
             metrics.Add(new ResponsiveMaintainer(this));
 			// metrics.Add(new Correctness(this));
 			// metrics.Add(new Correctness(this));
