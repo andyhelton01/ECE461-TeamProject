@@ -9,11 +9,11 @@ public class CorrectnessTests
     }
 
     [Test]
-    public void TestHighScore()
+    public async Task TestHighScore()
     {
         GitUrlLibrary lib = new GitUrlLibrary("https://github.com/andyhelton01/ECE461-TeamProject");
         Metric m = new Correctness(lib);
-        m.Calculate();
+        await m.Calculate();
         Assert.That(m.score, Is.GreaterThan(0.7));
     }
 }
