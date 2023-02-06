@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Threading.Tasks;
 using LibGit2Sharp;
 using Octokit;
@@ -34,6 +35,53 @@ namespace ECE461_CLI
 
 
 	}
+
+    public class RampUp : Metric
+    {
+
+        public RampUp(GitUrlLibrary parentLibrary) : base(parentLibrary)
+        {
+            this.weight = 1;
+            this.name = "RampUp";
+        }
+
+        private float Sigmoid(float x)
+        {
+            return 1 / (1 + (float)Math.Exp(-x));
+        }
+
+        public override async Task Calculate()
+        {
+
+            try
+            {
+                // FIXME name and repo needs to be parsed from url
+                var client = new GitHubClient(new ProductHeaderValue("my-cool-cli"));
+                var tokenAuth = new Octokit.Credentials(Environment.GetEnvironmentVariable("GITHUB_TOKEN"));
+                client.Credentials = tokenAuth;
+
+                // var repo = await client.Repository.Get(this.parentLibrary.owner, this.parentLibrary.name);
+                var repo = await client.Repository.Get("pytorch", "pytorch");
+
+                var langs = await client.Repository.GetAllLanguages(repo.Id);
+                long codeSize = 0;
+                foreach (RepositoryLanguage l in langs)
+                {
+                    codeSize += l.NumberOfBytes;
+                }
+
+                var readme = await client.Repository.Content.GetReadmeHtml(repo.Id);
+
+
+                this.score = Math.Max(1500 * readme.Length / codeSize, 1);
+
+            }
+            catch (Octokit.AuthorizationException)
+            {
+                Library.LogError("Bad credentials. Check your access token.");
+            }
+        }
+    }
 
     public class Correctness : Metric
     {
@@ -90,8 +138,13 @@ namespace ECE461_CLI
                     }
                     count++;
                 }
-                
-                this.score = score/count;
+
+                if (count == 0) {
+                    this.score = (float)0.4;
+                } else
+                {
+                    this.score = score / count;
+                }
             }
             catch (Octokit.AuthorizationException)
             {
@@ -119,7 +172,6 @@ namespace ECE461_CLI
 				var tokenAuth = new Octokit.Credentials(Environment.GetEnvironmentVariable("GITHUB_TOKEN"));
 				client.Credentials = tokenAuth;
 
-                // Get repo using information from Library (owner and name)
                 // var repo = await client.Repository.Get(this.parentLibrary.owner, this.parentLibrary.name);
                 var repo = await client.Repository.Get("pytorch", "pytorch");
                 var firstOneHundred = new ApiOptions

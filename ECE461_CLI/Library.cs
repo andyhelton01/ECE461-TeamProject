@@ -215,13 +215,13 @@ namespace ECE461_CLI
 
 
             // add metrics to metric list 
+            metrics.Add(new RampUp(this));
             metrics.Add(new Correctness(this));
+            //metrics.Add(new BusFactor(this));
             metrics.Add(new ResponsiveMaintainer(this));
-			// metrics.Add(new Correctness(this));
-			// metrics.Add(new Correctness(this));
-			// metrics.Add(new Correctness(this));
-			
-			base.addMetrics();
+            //metrics.Add(new License(this));
+
+            base.addMetrics();
 		}
 
 	}
