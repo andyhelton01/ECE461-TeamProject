@@ -20,7 +20,6 @@ elif [[ ${ubuntu_release} == *22.04* ]]; then
     sudo apt-get install -y dotnet-runtime-6.0
  
 else
-then
     echo "ERROR: UNSUPPORTED DISTRIBUTION OF LINUX"
     echo "Supported versions are Ubuntu 20.04 LTS and Ubuntu 22.04 LTS"
     sleep 5
