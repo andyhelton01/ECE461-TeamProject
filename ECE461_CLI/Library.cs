@@ -104,6 +104,28 @@ namespace ECE461_CLI
 			return jsonBlob;
 		}
 
+		///<summary>Similar to ToJson(), but formats output based on project specifications</summary>
+		public string ToOutputStandard()
+		{
+			// FIXME this method should format to project specification output!!
+
+			string jsonBlob = ToJson();
+
+			// if (metrics.Count == 0) {
+			// 	addMetrics();
+			// 	CalculateScore();
+			// }
+
+			// string jsonBlob = "{ \"libraryName\": " + this.name + ", \"libraryScore\": " + this.GetScore() + ", \"metrics\": {";
+			// foreach (Metric m in metrics) {
+			// 	jsonBlob += "{\"name\": " + m.name + ", " + "\"score\": " + m.score + "}, ";
+			// }
+			// jsonBlob += "}, ";
+			// jsonBlob += "\"type:\" " + this.GetType() + ", }";
+
+			return jsonBlob;
+		}
+
 		public override string ToString()
 		{
 			return ToJson();
@@ -201,12 +223,31 @@ namespace ECE461_CLI
 		/// <summary>
 		/// this is a library that is hosted on github
 		/// </summary>
+
+		string username {get;}
+		string reponame {get;}
+
 		public GitUrlLibrary(string url) : base(url) {
 			
 			// hit api and download all needed data
 			// TODO
-
 			
+
+			// get the user name and repository name
+			string[] phrases = url.Split("/");
+			if (phrases.Length <= 2 ) {
+				Library.LogError("Invalid github url: " + url);
+				this.username = "invalid";
+				this.reponame = "invalid";
+			}else{
+				this.username = phrases[phrases.Length-2];
+				this.reponame = phrases[phrases.Length-1];
+				if (this.reponame.Contains(".git")){
+					this.reponame = this.reponame.Substring(0,this.reponame.Length-4);
+				}
+			}
+			// Console.WriteLine("Url: " + url);
+			// Console.WriteLine("Usrname: " + this.username + ", reponame: " + this.reponame);
 		}
 
 		

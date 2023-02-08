@@ -47,12 +47,14 @@ namespace ECE461_CLI
 					
 				}
 
-				Random rand = new Random();
-				// calculate scores
-				foreach(Library lib in libraries) {
-					lib.GetScore();
-					lib.score = (float) rand.NextDouble();
-				}
+
+				// Test block to give randoms scores to libraries
+				// Random rand = new Random();
+				// // calculate scores
+				// foreach(Library lib in libraries) {
+				// 	lib.GetScore();
+				// 	lib.score = (float) rand.NextDouble();
+				// }
 
 				// sort libraries
 				libraries.Sort(new Library.LibraryComparer());
