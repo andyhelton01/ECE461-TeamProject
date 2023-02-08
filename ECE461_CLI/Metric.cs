@@ -9,7 +9,7 @@ using Octokit;
 using Octokit.Internal;
 using Octokit.GraphQL;
 using static Octokit.GraphQL.Variable;
-
+using Connection = Octokit.GraphQL.Connection;
 
 namespace ECE461_CLI
 {
@@ -214,8 +214,8 @@ namespace ECE461_CLI
 
         public override async Task Calculate() {
             try {
-                var productInformation = new ProductHeaderValue("YOUR_PRODUCT_NAME", "YOUR_PRODUCT_VERSION");
-                var connection = new Connection(productInformation, Environment.GetEnvironmentVariable("GITHUB_TOKEN"));
+                var productInformation = new Octokit.GraphQL.ProductHeaderValue("YOUR_PRODUCT_NAME", "YOUR_PRODUCT_VERSION");
+                var connection = new Octokit.GraphQL.Connection(productInformation, Environment.GetEnvironmentVariable("GITHUB_TOKEN"));
 
                 var query = new Query()
                     .RepositoryOwner(Var("owner"))
@@ -233,11 +233,11 @@ namespace ECE461_CLI
                     // NEED TO CHANGE
                     { "owner", "andyhelton01" },
                     { "name", "ECE461-TeamProject" },
-                }
+                };
 
-                var res = await connection.Run(query, vars);
+                var result = await connection.Run(query, vars);
                 double metricCalc = 1 - Math.Exp(-result.ForkCount / 50);
-                this.score = metricCalc;
+                this.score = (float)metricCalc;
             }
             catch (Octokit.AuthorizationException) {
                 Library.LogError("Bad credentials. Check your access token.");
