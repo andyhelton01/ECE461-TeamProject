@@ -194,8 +194,8 @@ namespace ECE461_CLI
 				var tokenAuth = new Octokit.Credentials(access_token);
 				client.Credentials = tokenAuth;
 
-                // var repo = await client.Repository.Get(this.parentLibrary.owner, this.parentLibrary.name);
-                var repo = await client.Repository.Get("pytorch", "pytorch");
+                var repo = await client.Repository.Get(this.parentLibrary.owner, this.parentLibrary.name);
+                // var repo = await client.Repository.Get("pytorch", "pytorch");
                 var firstOneHundred = new ApiOptions
                 {
                     PageSize = 100,

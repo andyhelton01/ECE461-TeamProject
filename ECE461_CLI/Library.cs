@@ -182,11 +182,10 @@ namespace ECE461_CLI
 
 		public static Library GetFromNpmUrl(string url) {
 
-			// TODO scrapeForGitUrl should return a Task<string> with the git url
 			Task<string> urlScrape = scrapeForGitUrl(url);
 			urlScrape.Wait();
 			string gitUrl = urlScrape.Result;
-			// string gitUrl = "https://github.com/andyhelton01/ECE461-TeamProject"; // TODO this should be from scrapeForGitUrl
+			
 			if (gitUrl == "no_url_found") {
 				return new NPMUrlLibrary(url);
 			}else{
@@ -210,9 +209,8 @@ namespace ECE461_CLI
 
 		public GitUrlLibrary(string url) : base(url) {
 			
-			// hit api and download all needed data
-			// TODO
-
+		
+			
 			// get the user name and repository name
 			string[] phrases = url.Split("/");
 			if (phrases.Length <= 2 ) {
