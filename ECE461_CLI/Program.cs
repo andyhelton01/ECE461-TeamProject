@@ -40,8 +40,8 @@ namespace ECE461_CLI
 		void testRun() {
 			LOG_LEVEL = 5;
 			
-			runUrlFile("/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/edge_case_url_file.txt");
-
+			// runUrlFile("/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/edge_case_url_file.txt");
+			runUrlFile("/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/sample_url_file.txt");
 
 		}
 
@@ -93,7 +93,7 @@ namespace ECE461_CLI
 			// output
 			
 			foreach(Library lib in libraries) {
-				Console.WriteLine(lib);
+				Console.WriteLine(lib.ToOutput());
 			}
 
 		}

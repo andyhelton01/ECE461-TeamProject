@@ -45,7 +45,7 @@ namespace ECE461_CLI
         public RampUp(GitUrlLibrary parentLibrary) : base(parentLibrary)
         {
             this.weight = 1;
-            this.name = "RampUp";
+            this.name = "RAMP_UP_SCORE";
         }
 
         private float Sigmoid(float x)
@@ -110,7 +110,7 @@ namespace ECE461_CLI
         public Correctness(GitUrlLibrary parentLibrary) : base(parentLibrary)
         {
             this.weight = 1;
-            this.name = "Correctness";
+            this.name = "CORRECTNESS_SCORE";
         }
 
 
@@ -195,7 +195,7 @@ namespace ECE461_CLI
         public ResponsiveMaintainer(GitUrlLibrary parentLibrary) : base(parentLibrary)
         {
             this.weight = 1;
-            this.name = "ResponsiveMaintainer";
+            this.name = "RESPONSIVE_MAINTAINER_SCORE";
         }
 
 
@@ -254,7 +254,7 @@ namespace ECE461_CLI
     public class BusFactor : Metric {
         public BusFactor(GitUrlLibrary parentLibrary) : base(parentLibrary) {
             this.weight = 1;
-            this.name = "BusFactor";
+            this.name = "BUS_FACTOR_SCORE";
         }
 
         public override async Task Calculate() {
@@ -298,6 +298,27 @@ namespace ECE461_CLI
             {
                 Program.LogError("Non existent repository");
             }
+        }
+    }
+    public class LicenseMetric : Metric
+    {
+
+        public LicenseMetric(GitUrlLibrary parentLibrary) : base(parentLibrary)
+        {
+            this.weight = 1;
+            this.name = "LICENSE_SCORE";
+        }
+
+        private float Sigmoid(float x)
+        {
+            return 1 / (1 + (float)Math.Exp(-x));
+        }
+
+        public override /*async*/ Task Calculate()
+        {
+
+            this.score = -1;
+            return Task.FromResult(true);
         }
     }
 }

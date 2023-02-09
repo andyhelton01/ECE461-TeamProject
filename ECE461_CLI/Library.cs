@@ -105,7 +105,7 @@ namespace ECE461_CLI
 		/// <returns>a string representation of this library in JSON format</returns>
 		public string ToJson()
 		{
-			// TODO improve this method
+	
 
 			if (metrics.Count == 0) {
 				addMetrics();
@@ -118,6 +118,20 @@ namespace ECE461_CLI
 			}
 			jsonBlob += "}, ";
 			jsonBlob += "\"type:\" " + this.GetType() + ", }";
+
+			return jsonBlob;
+		}
+
+		/// <returns>a string representation of this library based on project specifications</returns>
+		public virtual string ToOutput() {
+			// since this is not a urlLibrary, we will be missing a lot of values
+
+			if (metrics.Count == 0) { // ensure we are ready to be outputted
+				addMetrics();
+				CalculateScore();
+			}
+
+			string jsonBlob = "{\"URL\":\"\", \"NET_SCORE\":" + this.score + ", \"RAMP_UP_SCORE\":-1, \"CORRECTNESS_SCORE\":-1, \"BUS_FACTOR_SCORE\":-1, \"RESPONSIVE_MAINTAINER_SCORE\":-1, \"LICENSE_SCORE\":-1}";
 
 			return jsonBlob;
 		}
@@ -159,13 +173,28 @@ namespace ECE461_CLI
 
 			// TODO give this lib a better name please
 
-		
+
 
 		}
 
 		
 		public virtual string GetUrl() {
 			return url;
+		}
+
+		public override string ToOutput() {
+			if (metrics.Count == 0) { // ensure we are ready to be outputted
+				addMetrics();
+				CalculateScore();
+			}
+
+			string jsonBlob = "{ \"URL\":" + this.url + ", \"NET_SCORE\":" + this.GetScore();
+			foreach (Metric m in metrics) {
+				jsonBlob += ", \"" + m.name + "\":" + m.score;
+			}
+			jsonBlob += "}";
+
+			return jsonBlob;
 		}
 		
 
@@ -255,7 +284,7 @@ namespace ECE461_CLI
             metrics.Add(new Correctness(this));
             metrics.Add(new BusFactor(this));
             metrics.Add(new ResponsiveMaintainer(this));
-            //metrics.Add(new License(this));
+            metrics.Add(new LicenseMetric(this));
 
             base.addMetrics();
 		}
