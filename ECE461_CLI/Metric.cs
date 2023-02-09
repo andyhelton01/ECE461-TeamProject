@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using LibGit2Sharp;
 using Octokit;
 using Octokit.Internal;
+using Octokit.GraphQL;
+using static Octokit.GraphQL.Variable;
+using Connection = Octokit.GraphQL.Connection;
 
 namespace ECE461_CLI
 {
@@ -222,6 +225,45 @@ namespace ECE461_CLI
             catch (Octokit.AuthorizationException) {
 				Library.LogError("Bad credentials. Check your access token.");
 			}
+        }
+    }
+
+    public class BusFactor : Metric {
+        public BusFactor(GitUrlLibrary parentLibrary) : base(parentLibrary) {
+            this.weight = 1;
+            this.name = "BusFactor";
+        }
+
+        public override async Task Calculate() {
+            try {
+                var productInformation = new Octokit.GraphQL.ProductHeaderValue("YOUR_PRODUCT_NAME", "YOUR_PRODUCT_VERSION");
+                var connection = new Octokit.GraphQL.Connection(productInformation, Environment.GetEnvironmentVariable("GITHUB_TOKEN"));
+
+                var query = new Query()
+                    .RepositoryOwner(Var("owner"))
+                    .Repository(Var("name"))
+                    .Select(repo => new
+                    {
+                        repo.Id,
+                        repo.Name,
+                        repo.ForkCount,
+                    }).Compile();
+
+                var vars = new Dictionary<string, object>
+                {
+                    //Where owner is repo owner, and name is the name of the repo
+                    // NEED TO CHANGE
+                    { "owner", "andyhelton01" },
+                    { "name", "ECE461-TeamProject" },
+                };
+
+                var result = await connection.Run(query, vars);
+                double metricCalc = 1 - Math.Exp(-result.ForkCount / 50);
+                this.score = (float)metricCalc;
+            }
+            catch (Octokit.AuthorizationException) {
+                Library.LogError("Bad credentials. Check your access token.");
+            }
         }
     }
 }
