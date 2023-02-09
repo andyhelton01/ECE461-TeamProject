@@ -62,7 +62,7 @@ namespace ECE461_CLI
                 string access_token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
 
                 if (access_token is null || access_token.Length == 0) {
-                    Library.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
+                    Program.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
                     return;
                 }
                 // FIXME name and repo needs to be parsed from url
@@ -82,7 +82,7 @@ namespace ECE461_CLI
                 var readme = await client.Repository.Content.GetReadmeHtml(repo.Id);
 
                 if (codeSize == 0) {
-                    Library.LogError("repository " + this.parentLibrary.name + " has a code size of zero");
+                    Program.LogError("repository " + this.parentLibrary.owner + "/" + this.parentLibrary.name + " has a code size of zero");
                     this.score = 0;
                 
                 }else{
@@ -95,11 +95,11 @@ namespace ECE461_CLI
             }
             catch (Octokit.AuthorizationException)
             {
-                Library.LogError("Bad credentials. Check your access token.");
+                Program.LogError("Bad credentials. Check your access token.");
             }
             catch (Octokit.NotFoundException)
             {
-                Library.LogError("Non existent repository");
+                Program.LogError("Non existent repository");
             }
         }
     }
@@ -122,7 +122,7 @@ namespace ECE461_CLI
                 string access_token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
 
                 if (access_token is null || access_token.Length == 0) {
-                    Library.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
+                    Program.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
                     return;
                 }
 
@@ -180,11 +180,11 @@ namespace ECE461_CLI
             }
             catch (Octokit.AuthorizationException)
             {
-                Library.LogError("Bad credentials. Check your access token.");
+                Program.LogError("Bad credentials. Check your access token.");
             }
             catch (Octokit.NotFoundException)
             {
-                Library.LogError("Non existent repository");
+                Program.LogError("Non existent repository");
             }
         }
     }
@@ -207,7 +207,7 @@ namespace ECE461_CLI
                 string access_token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
 
                 if (access_token is null || access_token.Length == 0) {
-                    Library.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
+                    Program.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
                     return;
                 }
                 
@@ -242,11 +242,11 @@ namespace ECE461_CLI
 
             }
             catch (Octokit.AuthorizationException) {
-				Library.LogError("Bad credentials. Check your access token.");
+				Program.LogError("Bad credentials. Check your access token.");
             }
             catch (Octokit.NotFoundException)
             {
-                Library.LogError("Non existent repository");
+                Program.LogError("Non existent repository");
             }
         }
     }
@@ -264,7 +264,7 @@ namespace ECE461_CLI
 
                 if (access_token is null || access_token.Length == 0)
                 {
-                    Library.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
+                    Program.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
                     return;
                 }
 
@@ -283,8 +283,8 @@ namespace ECE461_CLI
 
                 var vars = new Dictionary<string, object>
                 {
-                    { "owner", "andyhelton01" },
-                    { "name", "ECE461-TeamProject" },
+                    { "owner", parentLibrary.owner },
+                    { "name", parentLibrary.name },
                 };
 
                 var result = await connection.Run(query, vars);
@@ -292,11 +292,11 @@ namespace ECE461_CLI
                 this.score = (float)metricCalc;
             }
             catch (Octokit.AuthorizationException) {
-                Library.LogError("Bad credentials. Check your access token.");
+                Program.LogError("Bad credentials. Check your access token.");
             }
             catch (Octokit.NotFoundException)
             {
-                Library.LogError("Non existent repository");
+                Program.LogError("Non existent repository");
             }
         }
     }

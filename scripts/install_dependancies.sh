@@ -1,4 +1,4 @@
-echo "installing hacking software..."
+# echo "installing hacking software..."
 sleep 1
 # installation procedure
 ubuntu_release=$(lsb_release -d | sed 's/.*Ubuntu \(\)/\1/g')

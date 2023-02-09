@@ -1,0 +1,55 @@
+[DEBUG] starting line parsing
+[DEBUG] Parsing url: https://github.com/cloudinary/cloudinary_npm
+[DEBUG] Parsing url: https://www.npmjs.com/package/express
+[DEBUG] Parsing url: https://github.com/nullivex/nodist
+[DEBUG] Parsing url: https://github.com/lodash/lodash
+[DEBUG] Parsing url: https://www.npmjs.com/package/browserify
+[ERROR] An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos.
+[DEBUG] starting line parsing
+[DEBUG] Parsing url: https://github.com/cloudinary/cloudinary_npm
+[DEBUG] Parsing url: https://www.npmjs.com/package/express
+[DEBUG] Parsing url: https://github.com/nullivex/nodist
+[DEBUG] Parsing url: https://github.com/lodash/lodash
+[DEBUG] Parsing url: https://www.npmjs.com/package/browserify
+[ERROR] An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos.
+[DEBUG] starting line parsing
+[DEBUG] Parsing url: https://gitglub.com/cloudinary/cloudinary_npm
+[DEBUG] Parsing url: https://www.npmjs.com/package/express_fake_package_hahaha
+[WARNING] Invalid library url: https://www.npmjs.com/package/express_fake_package_hahaha
+[ERROR] Invalid library Url: https://www.npmjs.com/package/express_fake_package_hahaha
+[DEBUG] Parsing url: github.com/nullivex/nodist
+[DEBUG] Parsing url: 
+[WARNING] url file contained and empty line. Skipping
+[DEBUG] Parsing url: https://github.com/lodash.git/lodash
+[DEBUG] Parsing url: https://www.npmjs.com/packages/browserify
+[DEBUG] Parsing url: 
+[WARNING] url file contained and empty line. Skipping
+[DEBUG] Parsing url: -
+[ERROR] Invalid github url: -
+[DEBUG] Parsing url: ..JsonSeriali
+[ERROR] Invalid github url: ..JsonSeriali
+[DEBUG] Parsing url: af9uw4fh9(&*)
+[ERROR] Invalid github url: af9uw4fh9(&*)
+[DEBUG] Parsing url: https://www.npmjs.com/package/express#*()
+[DEBUG] Parsing url: https://github.com/loda$h/lodash
+[ERROR] Non existent repository
+[ERROR] Non existent repository
+[ERROR] Non existent repository
+[ERROR] An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos.
+[ERROR] An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos.
+[ERROR] Non existent repository
+[ERROR] Non existent repository
+[ERROR] Non existent repository
+[ERROR] An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos.
+[ERROR] Non existent repository
+[ERROR] Non existent repository
+[ERROR] Non existent repository
+[ERROR] An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos.
+[ERROR] Non existent repository
+[ERROR] Non existent repository
+[ERROR] Non existent repository
+[ERROR] An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos.
+[ERROR] Non existent repository
+[ERROR] Non existent repository
+[ERROR] Non existent repository
+[ERROR] An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos.

@@ -11,6 +11,8 @@ namespace ECE461_CLI
 	
 	public class Library
 	{
+		
+		
 
 		public List<Metric> metrics = new List<Metric>();
 
@@ -20,7 +22,7 @@ namespace ECE461_CLI
 
 		public string name;
 
-		public static short ProgramStatus = 0;
+		
 
 		bool isCalculated = false;
 		public Library(string name)
@@ -40,10 +42,9 @@ namespace ECE461_CLI
 				try {
 					calcMetricTaskQueue.Add(m.Calculate());
 				}catch(Exception e) {
-					Library.LogError("An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos.");
+					Program.LogError("An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos." + e.ToString());
 
-					//TODO uncomment for production!
-					Console.WriteLine(e.ToString());
+					
 				}
 					
 			}
@@ -78,10 +79,9 @@ namespace ECE461_CLI
 			// wait for tasks calculateTasks to finish
 			foreach(Task t in calcMetricTaskQueue) {
 				try{
-					// t.Wait();
-					t.Wait(TimeSpan.FromSeconds(10));
+					t.Wait(TimeSpan.FromSeconds(Program.REQUEST_TIMEOUT_TIME));
 				}catch(Exception e) {
-					Library.LogError("An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos.");
+					Program.LogError("An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos.");
 
 					//TODO uncomment for production!
 					Console.WriteLine(e.ToString());
@@ -127,12 +127,7 @@ namespace ECE461_CLI
 			return ToJson();
 		}
 
-		public static void LogError(string error_msg) {
-			ProgramStatus = 1; // set that we had an error so we return EXIT_FAILURE
-			Console.ForegroundColor = ConsoleColor.Red;
-			Console.WriteLine("[ERROR] " + error_msg);
-			Console.ForegroundColor = ConsoleColor.White;
-		}
+		
 
 
 		public class LibraryComparer : IComparer<Library>
@@ -176,7 +171,7 @@ namespace ECE461_CLI
 
 		private async static Task<string> scrapeForGitUrl(string url) {
 				
-			// TODO get package name from url
+			// get package name from url
 			string[] phrases = url.Split("/");
 			string packageName = phrases[phrases.Length-1];
 
@@ -199,7 +194,13 @@ namespace ECE461_CLI
 		public static Library GetFromNpmUrl(string url) {
 
 			Task<string> urlScrape = scrapeForGitUrl(url);
-			urlScrape.Wait();
+
+			try {
+				urlScrape.Wait(TimeSpan.FromSeconds(Program.REQUEST_TIMEOUT_TIME));
+			}catch(AggregateException) { // probably a 404 error
+				Program.LogError("Invalid library url: " + url);
+				return null;
+			}
 			string gitUrl = urlScrape.Result;
 			
 			if (gitUrl == "no_url_found") {
@@ -230,7 +231,7 @@ namespace ECE461_CLI
 			// get the user name and repository name
 			string[] phrases = url.Split("/");
 			if (phrases.Length <= 2 ) {
-				Library.LogError("Invalid github url: " + url);
+				Program.LogError("Invalid github url: " + url);
 				this.owner = "invalid";
 				this.name = "invalid";
 			}else{
@@ -250,10 +251,10 @@ namespace ECE461_CLI
 
 
             // add metrics to metric list 
-            //metrics.Add(new RampUp(this));
-            //metrics.Add(new Correctness(this));
+            metrics.Add(new RampUp(this));
+            metrics.Add(new Correctness(this));
             metrics.Add(new BusFactor(this));
-            //metrics.Add(new ResponsiveMaintainer(this));
+            metrics.Add(new ResponsiveMaintainer(this));
             //metrics.Add(new License(this));
 
             base.addMetrics();

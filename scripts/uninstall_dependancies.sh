@@ -1,4 +1,4 @@
-echo "uninstalling software..."
+# echo "uninstalling software..."
 
 # removal procedure
 ubuntu_release=$(lsb_release -d | sed 's/.*Ubuntu \(\)/\1/g')
