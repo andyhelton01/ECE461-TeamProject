@@ -17,7 +17,7 @@ namespace ECE461_CLI
 
 		// members
 		public static short LOG_LEVEL = 0; // 0 is silent, 1 means informational messages, 2 means debug messages
-		public static string LOG_FILE = "log_file.txt";
+		public static string LOG_FILE = "bin/log_file.txt";
 		public static short ProgramStatus = 0;
 		static StringBuilder log = new StringBuilder();
 
@@ -101,6 +101,7 @@ namespace ECE461_CLI
 		static int Main(string[] args)
 		{
 			Program prog = new Program();
+			File.Delete(LOG_FILE);
 			foreach (string s in args) {
 					Console.WriteLine(s);
 				}
