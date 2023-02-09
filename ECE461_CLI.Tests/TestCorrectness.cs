@@ -9,7 +9,7 @@ public class CorrectnessTests
     }
 
     [Test]
-    public async Task TestHighScore()
+    public async Task TestCorrectnessHighScore()
     {
         GitUrlLibrary lib = new GitUrlLibrary("https://github.com/andyhelton01/ECE461-TeamProject");
         Metric m = new Correctness(lib);

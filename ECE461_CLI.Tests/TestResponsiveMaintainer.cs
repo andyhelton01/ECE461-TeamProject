@@ -9,7 +9,7 @@ public class ResponsiveMaintainerTests
     }
 
     [Test]
-    public async Task TestHighScore()
+    public async Task TestResponsiveMaintainerHighScore()
     {
         GitUrlLibrary lib = new GitUrlLibrary("https://github.com/andyhelton01/ECE461-TeamProject");
         Metric m = new ResponsiveMaintainer(lib);

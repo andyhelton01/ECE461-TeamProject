@@ -18,7 +18,7 @@ namespace ECE461_CLI
 			Console.WriteLine(lib);
 		}
 		
-		static void Main(string[] args)
+		static int Main(string[] args)
 		{
 			foreach (string s in args) {
 					Console.WriteLine(s);
@@ -66,7 +66,7 @@ namespace ECE461_CLI
 
 			}
 			
-			
+			return Library.ProgramStatus;	
 
 			
 		}

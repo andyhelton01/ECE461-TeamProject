@@ -15,7 +15,7 @@ namespace ECE461_CLI
 {
 	public abstract class Metric
 	{
-		public Library parentLibrary;
+		public GitUrlLibrary parentLibrary;
 
 		public float score;
 
@@ -23,7 +23,7 @@ namespace ECE461_CLI
 
 		public float weight; // must be overridden by child class
 
-		public Metric(Library parentLibrary)
+		public Metric(GitUrlLibrary parentLibrary)
 		{
 			this.parentLibrary = parentLibrary;
 
@@ -58,13 +58,20 @@ namespace ECE461_CLI
 
             try
             {
+
+                string access_token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
+
+                if (access_token is null || access_token.Length == 0) {
+                    Library.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
+                    return;
+                }
                 // FIXME name and repo needs to be parsed from url
                 var client = new GitHubClient(new ProductHeaderValue("my-cool-cli"));
-                var tokenAuth = new Octokit.Credentials(Environment.GetEnvironmentVariable("GITHUB_TOKEN"));
+                var tokenAuth = new Octokit.Credentials(access_token);
                 client.Credentials = tokenAuth;
 
-                // var repo = await client.Repository.Get(this.parentLibrary.owner, this.parentLibrary.name);
-                var repo = await client.Repository.Get("pytorch", "pytorch");
+                var repo = await client.Repository.Get(this.parentLibrary.owner, this.parentLibrary.name);
+                // var repo = await client.Repository.Get("pytorch", "pytorch");
 
                 var langs = await client.Repository.GetAllLanguages(repo.Id);
                 long codeSize = 0;
@@ -101,9 +108,16 @@ namespace ECE461_CLI
 
             try
             {
+                string access_token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
+
+                if (access_token is null || access_token.Length == 0) {
+                    Library.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
+                    return;
+                }
+
                 // FIXME name and repo needs to be parsed from url
                 var client = new GitHubClient(new ProductHeaderValue("my-cool-cli"));
-                var tokenAuth = new Octokit.Credentials(Environment.GetEnvironmentVariable("GITHUB_TOKEN"));
+                var tokenAuth = new Octokit.Credentials(access_token);
                 client.Credentials = tokenAuth;
 
                 var firstOneHundred = new ApiOptions
@@ -113,8 +127,8 @@ namespace ECE461_CLI
                 };
 
                 var request = new WorkflowRunsRequest { };
-                // var runs = await client.Actions.Workflows.Runs.List(this.parentLibrary.owner, this.parentLibrary.name, request, firstOneHundred);
-                var runs = await client.Actions.Workflows.Runs.List("pytorch", "pytorch", request, firstOneHundred);
+                var runs = await client.Actions.Workflows.Runs.List(this.parentLibrary.owner, this.parentLibrary.name, request, firstOneHundred);
+                // var runs = await client.Actions.Workflows.Runs.List("pytorch", "pytorch", request, firstOneHundred);
 
                 float score = 0;
                 int count = 0;
@@ -170,13 +184,21 @@ namespace ECE461_CLI
         {	
 
 			try {
+                
+                string access_token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
+
+                if (access_token is null || access_token.Length == 0) {
+                    Library.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
+                    return;
+                }
+                
 				// FIXME name and repo needs to be parsed from url
 				var client = new GitHubClient(new ProductHeaderValue("my-cool-cli"));
-				var tokenAuth = new Octokit.Credentials(Environment.GetEnvironmentVariable("GITHUB_TOKEN"));
+				var tokenAuth = new Octokit.Credentials(access_token);
 				client.Credentials = tokenAuth;
 
-                // var repo = await client.Repository.Get(this.parentLibrary.owner, this.parentLibrary.name);
-                var repo = await client.Repository.Get("pytorch", "pytorch");
+                var repo = await client.Repository.Get(this.parentLibrary.owner, this.parentLibrary.name);
+                // var repo = await client.Repository.Get("pytorch", "pytorch");
                 var firstOneHundred = new ApiOptions
                 {
                     PageSize = 100,

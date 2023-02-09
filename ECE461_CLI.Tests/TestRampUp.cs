@@ -9,7 +9,7 @@ public class RampUpTests
     }
 
     [Test]
-    public async Task TestHighScore()
+    public async Task TestRampUpHighScore()
     {
         GitUrlLibrary lib = new GitUrlLibrary("https://github.com/andyhelton01/ECE461-TeamProject");
         Metric m = new RampUp(lib);
