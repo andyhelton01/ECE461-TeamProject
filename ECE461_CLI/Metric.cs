@@ -71,7 +71,6 @@ namespace ECE461_CLI
                 client.Credentials = tokenAuth;
 
                 var repo = await client.Repository.Get(this.parentLibrary.owner, this.parentLibrary.name);
-                // var repo = await client.Repository.Get("pytorch", "pytorch");
 
                 var langs = await client.Repository.GetAllLanguages(repo.Id);
                 long codeSize = 0;
@@ -89,6 +88,10 @@ namespace ECE461_CLI
             catch (Octokit.AuthorizationException)
             {
                 Library.LogError("Bad credentials. Check your access token.");
+            }
+            catch (Octokit.NotFoundException)
+            {
+                Library.LogError("Non existent repository");
             }
         }
     }
@@ -128,7 +131,6 @@ namespace ECE461_CLI
 
                 var request = new WorkflowRunsRequest { };
                 var runs = await client.Actions.Workflows.Runs.List(this.parentLibrary.owner, this.parentLibrary.name, request, firstOneHundred);
-                // var runs = await client.Actions.Workflows.Runs.List("pytorch", "pytorch", request, firstOneHundred);
 
                 float score = 0;
                 int count = 0;
@@ -171,6 +173,10 @@ namespace ECE461_CLI
             catch (Octokit.AuthorizationException)
             {
                 Library.LogError("Bad credentials. Check your access token.");
+            }
+            catch (Octokit.NotFoundException)
+            {
+                Library.LogError("Non existent repository");
             }
         }
     }
@@ -229,7 +235,11 @@ namespace ECE461_CLI
             }
             catch (Octokit.AuthorizationException) {
 				Library.LogError("Bad credentials. Check your access token.");
-			}
+            }
+            catch (Octokit.NotFoundException)
+            {
+                Library.LogError("Non existent repository");
+            }
         }
     }
 
@@ -241,8 +251,17 @@ namespace ECE461_CLI
 
         public override async Task Calculate() {
             try {
+
+                string access_token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
+
+                if (access_token is null || access_token.Length == 0)
+                {
+                    Library.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
+                    return;
+                }
+
                 var productInformation = new Octokit.GraphQL.ProductHeaderValue("YOUR_PRODUCT_NAME", "YOUR_PRODUCT_VERSION");
-                var connection = new Octokit.GraphQL.Connection(productInformation, Environment.GetEnvironmentVariable("GITHUB_TOKEN"));
+                var connection = new Connection(productInformation, access_token);
 
                 var query = new Query()
                     .RepositoryOwner(Var("owner"))
@@ -266,6 +285,10 @@ namespace ECE461_CLI
             }
             catch (Octokit.AuthorizationException) {
                 Library.LogError("Bad credentials. Check your access token.");
+            }
+            catch (Octokit.NotFoundException)
+            {
+                Library.LogError("Non existent repository");
             }
         }
     }
