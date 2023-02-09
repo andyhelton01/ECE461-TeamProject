@@ -66,7 +66,7 @@ namespace ECE461_CLI
                     return;
                 }
                 // FIXME name and repo needs to be parsed from url
-                var client = new GitHubClient(new ProductHeaderValue("my-cool-cli"));
+                var client = new GitHubClient(new Octokit.ProductHeaderValue("my-cool-cli"));
                 var tokenAuth = new Octokit.Credentials(access_token);
                 client.Credentials = tokenAuth;
 
@@ -83,7 +83,7 @@ namespace ECE461_CLI
                 var readme = await client.Repository.Content.GetReadmeHtml(repo.Id);
 
 
-                this.score = Math.Max(1500 * readme.Length / codeSize, 1);
+                this.score = 1 - (float)Math.Exp(-10*(float)readme.Length/(float)codeSize);
 
             }
             catch (Octokit.AuthorizationException)
@@ -116,7 +116,7 @@ namespace ECE461_CLI
                 }
 
                 // FIXME name and repo needs to be parsed from url
-                var client = new GitHubClient(new ProductHeaderValue("my-cool-cli"));
+                var client = new GitHubClient(new Octokit.ProductHeaderValue("my-cool-cli"));
                 var tokenAuth = new Octokit.Credentials(access_token);
                 client.Credentials = tokenAuth;
 
@@ -134,10 +134,13 @@ namespace ECE461_CLI
                 int count = 0;
                 foreach (WorkflowRun r in runs.WorkflowRuns)
                 {
-                    switch (r.Status.ToString())
+                    switch (r.Conclusion.ToString())
                     {
-                        case "completed":
+                        case "failure":
+                        case "timed_out":
+                            break;
                         case "success":
+                        case "completed":
                             score += 1;
                             break;
                         case "in_progress":
@@ -151,6 +154,8 @@ namespace ECE461_CLI
                         case "stale":
                         case "action_required":
                             score += (float)0.5;
+                            break;
+                        default:
                             break;
                     }
                     count++;
@@ -193,7 +198,7 @@ namespace ECE461_CLI
                 }
                 
 				// FIXME name and repo needs to be parsed from url
-				var client = new GitHubClient(new ProductHeaderValue("my-cool-cli"));
+				var client = new GitHubClient(new Octokit.ProductHeaderValue("my-cool-cli"));
 				var tokenAuth = new Octokit.Credentials(access_token);
 				client.Credentials = tokenAuth;
 
@@ -218,7 +223,7 @@ namespace ECE461_CLI
                     var curDate = System.DateTimeOffset.Now;
                     var timeSinceLastCommit = curDate - lastCommitDate;
 
-                    this.score = (float)Math.Exp(-0.1 * timeSinceLastCommit.Days);
+                    this.score = (float)Math.Exp(-0.01 * timeSinceLastCommit.Days);
                 }
 
             }
@@ -251,8 +256,6 @@ namespace ECE461_CLI
 
                 var vars = new Dictionary<string, object>
                 {
-                    //Where owner is repo owner, and name is the name of the repo
-                    // NEED TO CHANGE
                     { "owner", "andyhelton01" },
                     { "name", "ECE461-TeamProject" },
                 };
