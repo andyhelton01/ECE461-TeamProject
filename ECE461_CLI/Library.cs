@@ -37,7 +37,15 @@ namespace ECE461_CLI
 			// HACK this may blow up the computer... not sure if we need to control the number of threads here
 			foreach (Metric m in metrics)
 			{
-				calcMetricTaskQueue.Add(m.Calculate());
+				try {
+					calcMetricTaskQueue.Add(m.Calculate());
+				}catch(Exception e) {
+					Library.LogError("An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos.");
+
+					//TODO uncomment for production!
+					Console.WriteLine(e.ToString());
+				}
+					
 			}
 		}
 		protected float CalculateScore()
@@ -69,7 +77,15 @@ namespace ECE461_CLI
 		public void waitForCalculations() {
 			// wait for tasks calculateTasks to finish
 			foreach(Task t in calcMetricTaskQueue) {
-				t.Wait();
+				try{
+					// t.Wait();
+					t.Wait(TimeSpan.FromSeconds(10));
+				}catch(Exception e) {
+					Library.LogError("An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos.");
+
+					//TODO uncomment for production!
+					Console.WriteLine(e.ToString());
+				}
 			}
 
 			
