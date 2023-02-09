@@ -20,6 +20,8 @@ namespace ECE461_CLI
 
 		public string name;
 
+		public static short ProgramStatus = 0;
+
 		bool isCalculated = false;
 		public Library(string name)
 		{
@@ -110,6 +112,7 @@ namespace ECE461_CLI
 		}
 
 		public static void LogError(string error_msg) {
+			ProgramStatus = 1; // set that we had an error so we return EXIT_FAILURE
 			Console.ForegroundColor = ConsoleColor.Red;
 			Console.WriteLine("[ERROR] " + error_msg);
 			Console.ForegroundColor = ConsoleColor.White;
@@ -201,12 +204,30 @@ namespace ECE461_CLI
 		/// <summary>
 		/// this is a library that is hosted on github
 		/// </summary>
+
+		public string owner {get;}
+
+
 		public GitUrlLibrary(string url) : base(url) {
 			
 			// hit api and download all needed data
 			// TODO
 
-			
+			// get the user name and repository name
+			string[] phrases = url.Split("/");
+			if (phrases.Length <= 2 ) {
+				Library.LogError("Invalid github url: " + url);
+				this.owner = "invalid";
+				this.name = "invalid";
+			}else{
+				this.owner = phrases[phrases.Length-2];
+				this.name = phrases[phrases.Length-1];
+				if (this.name.Contains(".git")){
+					this.name = this.name.Substring(0,this.name.Length-4);
+				}
+			}
+			// Console.WriteLine("Url: " + url);
+			// Console.WriteLine("Usrname: " + this.username + ", reponame: " + this.reponame);
 		}
 
 		
