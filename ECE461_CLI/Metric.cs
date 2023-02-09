@@ -79,8 +79,15 @@ namespace ECE461_CLI
 
                 var readme = await client.Repository.Content.GetReadmeHtml(repo.Id);
 
+                if (codeSize == 0) {
+                    Library.LogError("repository " + this.parentLibrary.name + " has a code size of zero");
+                    this.score = 0;
+                
+                }else{
+                    this.score = Math.Min(1500 * readme.Length / codeSize, 1);
+                }
 
-                this.score = Math.Max(1500 * readme.Length / codeSize, 1);
+                
 
             }
             catch (Octokit.AuthorizationException)
