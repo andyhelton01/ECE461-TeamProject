@@ -61,7 +61,7 @@ namespace ECE461_CLI
                     return;
                 }
                 // FIXME name and repo needs to be parsed from url
-                var client = new GitHubClient(new Octokit.ProductHeaderValue("my-cool-cli"));
+                var client = new GitHubClient(new Octokit.ProductHeaderValue("ECE461_CLI"));
                 var tokenAuth = new Octokit.Credentials(access_token);
                 client.Credentials = tokenAuth;
 
@@ -122,7 +122,7 @@ namespace ECE461_CLI
                 }
 
                 // FIXME name and repo needs to be parsed from url
-                var client = new GitHubClient(new Octokit.ProductHeaderValue("my-cool-cli"));
+                var client = new GitHubClient(new Octokit.ProductHeaderValue("ECE461_CLI"));
                 var tokenAuth = new Octokit.Credentials(access_token);
                 client.Credentials = tokenAuth;
 
@@ -206,35 +206,15 @@ namespace ECE461_CLI
                     return;
                 }
                 
-				// FIXME name and repo needs to be parsed from url
-				var client = new GitHubClient(new Octokit.ProductHeaderValue("my-cool-cli"));
+				
+				var client = new GitHubClient(new Octokit.ProductHeaderValue("ECE461_CLI"));
 				var tokenAuth = new Octokit.Credentials(access_token);
 				client.Credentials = tokenAuth;
 
                 var repo = await client.Repository.Get(this.parentLibrary.owner, this.parentLibrary.name);
                 // var repo = await client.Repository.Get("pytorch", "pytorch");
-                var firstOneHundred = new ApiOptions
-                {
-                    PageSize = 100,
-                    PageCount = 1
-                };
-                var commits = await client.Repository.Commit.GetAll(repo.Id, firstOneHundred);
-                
-                if (commits.Count == 0)
-                {
-                    this.score = 0;
-                }
-                else
-                {
-                    var lastCommit = commits.FirstOrDefault();
-
-                    var lastCommitDate = lastCommit.Commit.Author.Date;
-                    var curDate = System.DateTimeOffset.Now;
-                    var timeSinceLastCommit = curDate - lastCommitDate;
-
-                    this.score = (float)Math.Exp(-0.01 * timeSinceLastCommit.Days);
-                }
-
+               
+           
             }
             catch (Octokit.AuthorizationException) {
 				Program.LogError("Bad credentials. Check your access token.");
@@ -309,11 +289,56 @@ namespace ECE461_CLI
             return 1 / (1 + (float)Math.Exp(-x));
         }
 
-        public override /*async*/ Task Calculate()
+        public override async Task Calculate()
         {
+            try {
+                
+                string access_token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
 
-            this.score = -1;
-            return Task.FromResult(true);
+                if (access_token is null || access_token.Length == 0) {
+                    Program.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
+                    return;
+                }
+                
+				
+				var client = new GitHubClient(new Octokit.ProductHeaderValue("ECE461_CLI"));
+				var tokenAuth = new Octokit.Credentials(access_token);
+				client.Credentials = tokenAuth;
+
+                var repo = await client.Repository.Get(this.parentLibrary.owner, this.parentLibrary.name);
+                // var repo = await client.Repository.Get("pytorch", "pytorch");
+                var firstOneHundred = new ApiOptions
+                {
+                    PageSize = 100,
+                    PageCount = 1
+                };
+                var commits = await client.Repository..GetAll(repo.Id, firstOneHundred);
+                
+                if (commits.Count == 0)
+                {
+                    this.score = 0;
+                }
+                else
+                {
+                    var lastCommit = commits.FirstOrDefault();
+
+                    var lastCommitDate = lastCommit.Commit.Author.Date;
+                    var curDate = System.DateTimeOffset.Now;
+                    var timeSinceLastCommit = curDate - lastCommitDate;
+
+                    this.score = (float)Math.Exp(-0.01 * timeSinceLastCommit.Days);
+                }
+
+            }
+            catch (Octokit.AuthorizationException) {
+				Program.LogError("Bad credentials. Check your access token.");
+            }
+            catch (Octokit.NotFoundException)
+            {
+                Program.LogError("Non existent repository");
+            }
+
+        
         }
     }
 }
