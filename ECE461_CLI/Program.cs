@@ -51,10 +51,25 @@ namespace ECE461_CLI
 			List<Library> libraries = new List<Library>();
 
 			LogDebug("starting line parsing");
+
+			IEnumerable<string> lines;
+
+			
+
+			try {
+				lines = System.IO.File.ReadLines(filename);
+			}catch(FileNotFoundException) {
+				LogError("Url file not found: " + filename);
+				return;
+			}
+			
+			
 			try
 			{
-				foreach (string line in System.IO.File.ReadLines(filename))
+	
+				foreach (string line in lines)
 				{
+				
 					// TODO sanitize inputs with error messages and stuff		
 
 					LogDebug("Parsing url: " + line);
@@ -91,6 +106,11 @@ namespace ECE461_CLI
 					}
 
 				}
+				
+				if (libraries.Count == 0) {
+					LogWarning("No valid urls were found in the url file");
+				}
+				
 			} 
 			catch (System.IO.FileNotFoundException)
 			{
@@ -124,9 +144,7 @@ namespace ECE461_CLI
 		{
 			Program prog = new Program();
 			File.Delete(LOG_FILE);
-			foreach (string s in args) {
-					Console.WriteLine(s);
-				}
+			
 			if (args.Length == 0 || args[0].Length == 0) {
 				Console.WriteLine("Received " + args.Length + " cli arguments");
 				prog.testRun();

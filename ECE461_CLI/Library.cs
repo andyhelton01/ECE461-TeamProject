@@ -62,7 +62,7 @@ namespace ECE461_CLI
 			float runningSum = 0;
 			float divisor = 0;
 			foreach (Metric m in metrics) {
-				runningSum += m.weight * m.score;
+				runningSum += m.score == -1 ? 0 : m.weight * m.score;
 				divisor += m.weight;
 			}
 
