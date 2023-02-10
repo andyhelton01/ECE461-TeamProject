@@ -63,65 +63,56 @@ namespace ECE461_CLI
 				LogError("Url file not found: " + filename);
 				return;
 			}
-			
-			
-			try
+            catch (DirectoryNotFoundException)
+            {
+                LogError("Url directory not found: " + filename);
+                return;
+            }
+
+
+            foreach (string line in lines)
 			{
-	
-				foreach (string line in lines)
+			
+				// TODO sanitize inputs with error messages and stuff		
+
+				LogDebug("Parsing url: " + line);
+				// System.Console.WriteLine(line);
+				if (line.Length == 0)
 				{
-				
-					// TODO sanitize inputs with error messages and stuff		
+					LogWarning("url file contained and empty line. Skipping");
+					continue;
+				}
 
-					LogDebug("Parsing url: " + line);
-					// System.Console.WriteLine(line);
-					if (line.Length == 0)
+				if (line.Contains("npmjs"))
+				{
+					Library newLib = UrlLibrary.GetFromNpmUrl(line);
+					if (newLib != null)
 					{
-						LogWarning("url file contained and empty line. Skipping");
-						continue;
-					}
-
-					if (line.Contains("npmjs"))
-					{
-						Library newLib = UrlLibrary.GetFromNpmUrl(line);
-						if (newLib != null)
-						{
-							libraries.Add(newLib);
-						}
-						else
-						{
-							LogError("Invalid library Url: " + line);
-						}
+						libraries.Add(newLib);
 					}
 					else
 					{
-						Library newLib = new GitUrlLibrary(line);
-						if (newLib != null)
-						{
-							libraries.Add(newLib);
-						}
-						else
-						{
-							LogError("Invalid library Url: " + line);
-						}
+						LogError("Invalid library Url: " + line);
 					}
-
 				}
+				else
+				{
+					Library newLib = new GitUrlLibrary(line);
+					if (newLib != null)
+					{
+						libraries.Add(newLib);
+					}
+					else
+					{
+						LogError("Invalid library Url: " + line);
+					}
+				}
+			}
 				
 				if (libraries.Count == 0) {
 					LogWarning("No valid urls were found in the url file");
 				}
 				
-			} 
-			catch (System.IO.FileNotFoundException)
-			{
-				LogError("Invalid URL file name");
-			}
-            catch (System.IO.DirectoryNotFoundException)
-            {
-                LogError("Invalid URL file path");
-            }
-
 
             Random rand = new Random();
 			// calculate scores (this is not necessary, as asking the lib to print itself will calculate score automatically. we do this to make sure all error messages are seperated from output)
