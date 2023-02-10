@@ -234,8 +234,8 @@ namespace ECE461_CLI
 
                     this.score = (float)Math.Exp(-0.01 * timeSinceLastCommit.Days);
 
-
                 }
+            }
             catch (Octokit.AuthorizationException) {
 				Program.LogError("Bad credentials. Check your access token.");
             }
