@@ -8,7 +8,7 @@ namespace ECE461_CLI
 {
 	
 	
-	class Program
+	public class Program
 	{	
 		// parameters
 		public const double REQUEST_TIMEOUT_TIME = 5;
@@ -45,7 +45,7 @@ namespace ECE461_CLI
 
 		}
 
-		void runUrlFile(string filename) {
+		public void runUrlFile(string filename) {
 			// create list of libraries by parsing url file
 			// and splitting up between npm and git libs
 			List<Library> libraries = new List<Library>();
