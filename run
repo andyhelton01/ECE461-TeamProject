@@ -27,7 +27,7 @@ then
 elif [[ $1 == "test" ]]
 then
     cd ..
-    dotnet test  --logger:"trx;LogFileName=./TestOutput.xml" --collect:"XPlat Code Coverage" > $LOG_FILE
+    dotnet test  --logger:"trx;LogFileName=./TestOutput.xml" --collect:"XPlat Code Coverage" > "$LOG_FILE"
 
     # Tests
     tests_total=$(grep -Po 'total=\"\K[0-9]+' ./ECE461_CLI.Tests/TestResults/TestOutput.xml)
