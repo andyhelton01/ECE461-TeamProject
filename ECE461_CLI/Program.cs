@@ -19,7 +19,7 @@ namespace ECE461_CLI
 		public static short LOG_LEVEL = 0; // 0 is silent, 1 means informational messages, 2 means debug messages
 		public static string LOG_FILE = "bin/log_file.txt";
 		public static short ProgramStatus = 0;
-		static StringBuilder log = new StringBuilder();
+		public static StringBuilder log = new StringBuilder();
 
 		public Program() {
 			string log_level_env_var = Environment.GetEnvironmentVariable("LOG_LEVEL");
