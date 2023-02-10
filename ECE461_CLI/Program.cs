@@ -51,33 +51,50 @@ namespace ECE461_CLI
 			List<Library> libraries = new List<Library>();
 
 			LogDebug("starting line parsing");
-			foreach (string line in System.IO.File.ReadLines(filename))
-			{  
-				// TODO sanitize inputs with error messages and stuff		
+			try
+			{
+				foreach (string line in System.IO.File.ReadLines(filename))
+				{
+					// TODO sanitize inputs with error messages and stuff		
 
-				LogDebug("Parsing url: " + line);
-				// System.Console.WriteLine(line);
-				if (line.Length == 0) {
-					LogWarning("url file contained and empty line. Skipping");
-					continue;
-				}
+					LogDebug("Parsing url: " + line);
+					// System.Console.WriteLine(line);
+					if (line.Length == 0)
+					{
+						LogWarning("url file contained and empty line. Skipping");
+						continue;
+					}
 
-				if (line.Contains("npmjs")) {
-					Library newLib = UrlLibrary.GetFromNpmUrl(line);
-					if (newLib != null) {
-						libraries.Add(newLib);
-					}else{
-						LogError("Invalid library Url: " + line);
+					if (line.Contains("npmjs"))
+					{
+						Library newLib = UrlLibrary.GetFromNpmUrl(line);
+						if (newLib != null)
+						{
+							libraries.Add(newLib);
+						}
+						else
+						{
+							LogError("Invalid library Url: " + line);
+						}
 					}
-				}else{
-					Library newLib = new GitUrlLibrary(line);
-					if (newLib != null) {
-						libraries.Add(newLib);
-					}else{
-						LogError("Invalid library Url: " + line);
+					else
+					{
+						Library newLib = new GitUrlLibrary(line);
+						if (newLib != null)
+						{
+							libraries.Add(newLib);
+						}
+						else
+						{
+							LogError("Invalid library Url: " + line);
+						}
 					}
+
 				}
-				
+			} 
+			catch (System.IO.FileNotFoundException)
+			{
+				LogError("Invalid URL file name/path");
 			}
 
 			Random rand = new Random();
