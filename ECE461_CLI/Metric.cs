@@ -311,29 +311,7 @@ namespace ECE461_CLI
 				var tokenAuth = new Octokit.Credentials(access_token);
 				client.Credentials = tokenAuth;
 
-                var repo = await client.Repository.Get(this.parentLibrary.owner, this.parentLibrary.name);
-                // var repo = await client.Repository.Get("pytorch", "pytorch");
-                var firstOneHundred = new ApiOptions
-                {
-                    PageSize = 100,
-                    PageCount = 1
-                };
-                var commits = await client.Repository..GetAll(repo.Id, firstOneHundred);
-                
-                if (commits.Count == 0)
-                {
-                    this.score = 0;
-                }
-                else
-                {
-                    var lastCommit = commits.FirstOrDefault();
-
-                    var lastCommitDate = lastCommit.Commit.Author.Date;
-                    var curDate = System.DateTimeOffset.Now;
-                    var timeSinceLastCommit = curDate - lastCommitDate;
-
-                    this.score = (float)Math.Exp(-0.01 * timeSinceLastCommit.Days);
-                }
+                this.score = -1;
 
             }
             catch (Octokit.AuthorizationException) {
@@ -344,6 +322,7 @@ namespace ECE461_CLI
                 Program.LogError("Non existent repository");
             }
 
+            
         
         }
     }
