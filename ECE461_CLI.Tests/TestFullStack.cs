@@ -36,6 +36,7 @@ public class FullStackTests
     }
 
 
+    [Test]
     public void TestInvalidFormat()
     {
         string[] args = { "../../../../edge_case_url_file.txt" };
