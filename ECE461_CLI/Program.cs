@@ -39,9 +39,10 @@ namespace ECE461_CLI
 
 		void testRun() {
 			LOG_LEVEL = 5;
-			
+
 			// runUrlFile("/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/edge_case_url_file.txt");
-			runUrlFile("/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/sample_url_file.txt");
+			// runUrlFile("/home/shay/a/afpannun/class_files/461/ECE461-TeamProject/sample_url_file.txt");
+			runUrlFile("C:\\Users\\afpannun\\source\\repos\\ECE461-TeamProject\\sample_url_file.txt");
 
 		}
 
@@ -139,11 +140,15 @@ namespace ECE461_CLI
 			}
 
 		}
-		
+
 		static int Main(string[] args)
 		{
 			Program prog = new Program();
-			File.Delete(LOG_FILE);
+			try
+			{
+				File.Delete(LOG_FILE);
+			}
+			catch (DirectoryNotFoundException) { }
 			
 			if (args.Length == 0 || args[0].Length == 0) {
 				Console.WriteLine("Received " + args.Length + " cli arguments");
@@ -153,8 +158,13 @@ namespace ECE461_CLI
 				prog.runUrlFile(args[0]);
 
 			}
-			
-			File.AppendAllText(LOG_FILE, log.ToString());
+			try
+			{
+				File.AppendAllText(LOG_FILE, log.ToString());
+			}catch (DirectoryNotFoundException) {
+				LogWarning("Log file directory not found. Check your LOG_FILE environment variable");
+			}
+
 			return ProgramStatus;	
 
 			
