@@ -266,6 +266,12 @@ namespace ECE461_CLI
                 var productInformation = new Octokit.GraphQL.ProductHeaderValue("YOUR_PRODUCT_NAME", "YOUR_PRODUCT_VERSION");
                 var connection = new Connection(productInformation, access_token);
 
+                var client = new GitHubClient(new Octokit.ProductHeaderValue("my-cool-cli"));
+                var tokenAuth = new Octokit.Credentials(access_token);
+                client.Credentials = tokenAuth;
+
+                var repo = await client.Repository.Get(this.parentLibrary.owner, this.parentLibrary.name);
+
                 var query = new Query()
                     .RepositoryOwner(Var("owner"))
                     .Repository(Var("name"))
@@ -278,8 +284,8 @@ namespace ECE461_CLI
 
                 var vars = new Dictionary<string, object>
                 {
-                    { "owner", this.parentLibrary.owner },
-                    { "name", this.parentLibrary.name },
+                    { "owner", repo.Owner.Login },
+                    { "name", repo.Name },
                 };
 
                 var result = await connection.Run(query, vars);
@@ -292,7 +298,7 @@ namespace ECE461_CLI
             catch (Octokit.NotFoundException)
             {
                 Program.LogError("Non existent repository");
-            }
+            }            
         }
     }
     public class LicenseMetric : Metric
