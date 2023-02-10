@@ -48,11 +48,6 @@ namespace ECE461_CLI
             this.name = "RAMP_UP_SCORE";
         }
 
-        private float Sigmoid(float x)
-        {
-            return 1 / (1 + (float)Math.Exp(-x));
-        }
-
         public override async Task Calculate()
         {
 
@@ -283,12 +278,12 @@ namespace ECE461_CLI
 
                 var vars = new Dictionary<string, object>
                 {
-                    { "owner", parentLibrary.owner },
-                    { "name", parentLibrary.name },
+                    { "owner", this.parentLibrary.owner },
+                    { "name", this.parentLibrary.name },
                 };
 
                 var result = await connection.Run(query, vars);
-                double metricCalc = 1 - Math.Exp(-result.ForkCount / 50);
+                double metricCalc = 1 - Math.Exp(-(float)result.ForkCount / 200);
                 this.score = (float)metricCalc;
             }
             catch (Octokit.AuthorizationException) {
