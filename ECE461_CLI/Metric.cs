@@ -28,13 +28,16 @@ namespace ECE461_CLI
 			this.parentLibrary = parentLibrary;
 
 		}
+        public float GetScore()
+        {
+            return (float)Math.Round(this.score, 2);
+        }
 
-
-		/*
+        /*
 		 * <summary> calculates the score for this metric
 		 */
-		public abstract Task Calculate();
-
+        public abstract Task Calculate();
+        
 
 
 	}
@@ -108,7 +111,7 @@ namespace ECE461_CLI
             this.name = "CORRECTNESS_SCORE";
         }
 
-
+        
         public override async Task Calculate()
         {
 
@@ -189,7 +192,7 @@ namespace ECE461_CLI
 
         public ResponsiveMaintainer(GitUrlLibrary parentLibrary) : base(parentLibrary)
         {
-            this.weight = 1;
+            this.weight = 2;
             this.name = "RESPONSIVE_MAINTAINER_SCORE";
         }
 
@@ -306,7 +309,7 @@ namespace ECE461_CLI
 
         public LicenseMetric(GitUrlLibrary parentLibrary) : base(parentLibrary)
         {
-            this.weight = 1;
+            this.weight = 0;
             this.name = "LICENSE_SCORE";
         }
 
