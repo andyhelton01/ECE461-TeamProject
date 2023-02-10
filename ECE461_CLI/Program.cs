@@ -94,10 +94,15 @@ namespace ECE461_CLI
 			} 
 			catch (System.IO.FileNotFoundException)
 			{
-				LogError("Invalid URL file name/path");
+				LogError("Invalid URL file name");
 			}
+            catch (System.IO.DirectoryNotFoundException)
+            {
+                LogError("Invalid URL file path");
+            }
 
-			Random rand = new Random();
+
+            Random rand = new Random();
 			// calculate scores (this is not necessary, as asking the lib to print itself will calculate score automatically. we do this to make sure all error messages are seperated from output)
 			foreach(Library lib in libraries) {
 				lib.GetScore();

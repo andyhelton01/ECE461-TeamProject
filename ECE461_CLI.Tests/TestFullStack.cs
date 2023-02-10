@@ -12,7 +12,7 @@ public class FullStackTests
     }
 
     [Test]
-    public void TestFullStackValidInput()
+    public void TestValidInput()
     {
         string[] args = { "../../../../sample_url_file.txt" };
         Program prog = new Program();
@@ -20,9 +20,25 @@ public class FullStackTests
     }
 
     [Test]
-    public void TestFullStackInvalidInput()
+    public void TestIncorrectFileName()
     {
         string[] args = { "blahblahblah" };
+        Program prog = new Program();
+        prog.runUrlFile(args[0]);
+    }
+
+    [Test]
+    public void TestIncorrectFilePath()
+    {
+        string[] args = { "blahblahblah/sample_url_file.txt" };
+        Program prog = new Program();
+        prog.runUrlFile(args[0]);
+    }
+
+
+    public void TestInvalidFormat()
+    {
+        string[] args = { "../../../../edge_case_url_file.txt" };
         Program prog = new Program();
         prog.runUrlFile(args[0]);
     }
