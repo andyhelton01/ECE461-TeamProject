@@ -38,7 +38,9 @@ then
     # Coverage
     lines_covered=$(grep -Po 'lines-covered=\"\K[0-9]+' ./ECE461_CLI.Tests/TestResults/*/coverage.cobertura.xml)
     lines_valid=$(grep -Po 'lines-valid=\"\K[0-9]+' ./ECE461_CLI.Tests/TestResults/*/coverage.cobertura.xml)
-    echo "Coverage: $(($lines_covered*100 / $lines_valid))%"
+    coverage="$(($lines_covered*100 / $lines_valid))%"
+    echo "Coverage: $coverage"
+    echo "$tests_passed/$tests_total test cases passed. $coverage line coverage achieved."
 
     rm -r ./ECE461_CLI.Tests/TestResults
 else
