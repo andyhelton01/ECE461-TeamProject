@@ -51,6 +51,11 @@ namespace ECE461_CLI
             this.name = "RAMP_UP_SCORE";
         }
 
+        private float sigmoid(float x)
+		{
+            return 1 / (1 + (float) Math.Exp(-x));
+		}
+
         public override async Task Calculate()
         {
 
@@ -78,7 +83,8 @@ namespace ECE461_CLI
                     codeSize += l.NumberOfBytes;
                 }
 
-                var readme = await client.Repository.Content.GetReadmeHtml(repo.Id);
+                // var readme = await client.Repository.Content.GetReadmeHtml(repo.Id);
+                string readme = (await client.Repository.Content.GetReadme(repo.Id)).Content;
 
                 if (codeSize == 0)
                 {
@@ -88,8 +94,13 @@ namespace ECE461_CLI
                 }
                 else
                 {
+                    float ratio = (float)readme.Length / 10000;// / (float)Math.Pow(codeSize,2.0/3.0);
+           
+                   
                     // this.score = Math.Min(1500 * readme.Length / codeSize, 1);
-                    this.score = 1 - (float)Math.Exp(-10 * (float)readme.Length / (float)codeSize);
+                    this.score = 2*(sigmoid(ratio)-0.5F);
+                    Console.WriteLine("ratio: " + ratio);
+                    Console.WriteLine("score: " + score);
                 }
 
 
