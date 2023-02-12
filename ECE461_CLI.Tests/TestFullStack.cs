@@ -43,4 +43,13 @@ public class FullStackTests
         Program prog = new Program();
         prog.runUrlFile(args[0]);
     }
+
+    [Test]
+    public void TestMain()
+    {
+        string[] args = { "../../../../sample_url_file.txt" };
+        Program.LOG_FILE = "../../../../log";
+        Program.Main(args);
+        File.Delete(Program.LOG_FILE);
+    }
 }
