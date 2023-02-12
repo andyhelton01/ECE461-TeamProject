@@ -1,3 +1,6 @@
+.vs/
+.vscode/
+
 # Source code
 /ECE461_CLI/bin
 /ECE461_CLI/obj
