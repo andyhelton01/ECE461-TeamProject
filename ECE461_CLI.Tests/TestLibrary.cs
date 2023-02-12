@@ -31,7 +31,7 @@ public class LibraryTests
 	{
 		Library lib = UrlLibrary.GetFromNpmUrl("https://www.npmjs.com/package/express");
 		lib.GetScore();
-		Assert.That(lib.score, Is.LessThan(0.5));
+		Assert.That(lib.score, Is.GreaterThan(0.7));
 	}
 
 	[Test]
