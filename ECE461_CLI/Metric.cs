@@ -99,8 +99,6 @@ namespace ECE461_CLI
                    
                     // this.score = Math.Min(1500 * readme.Length / codeSize, 1);
                     this.score = 2*(sigmoid(ratio)-0.5F);
-                    Console.WriteLine("ratio: " + ratio);
-                    Console.WriteLine("score: " + score);
                 }
 
 
