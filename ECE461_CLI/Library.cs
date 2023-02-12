@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace ECE461_CLI
 {
@@ -80,11 +81,10 @@ namespace ECE461_CLI
 			foreach(Task t in calcMetricTaskQueue) {
 				try{
 					t.Wait(TimeSpan.FromSeconds(Program.REQUEST_TIMEOUT_TIME));
+		
 				}catch(Exception e) {
-					Program.LogError("An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos.");
+					Program.LogError("An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos." + e.ToString());
 
-					//TODO uncomment for production!
-					Console.WriteLine(e.ToString());
 				}
 			}
 
@@ -112,9 +112,9 @@ namespace ECE461_CLI
 				CalculateScore();
 			}
 
-			string jsonBlob = "{ \"libraryName\": " + this.name + ", \"libraryScore\": " + this.GetScore() + ", \"metrics\": {";
+			string jsonBlob = "{ \"libraryName\": " + this.name + ", \"libraryScore\": " + Math.Round(this.GetScore(), 2) + ", \"metrics\": {";
 			foreach (Metric m in metrics) {
-				jsonBlob += "{\"name\": " + m.name + ", " + "\"score\": " + m.score + "}, ";
+				jsonBlob += "{\"name\": " + m.name + ", " + "\"score\": " + m.GetScore() + "}, ";
 			}
 			jsonBlob += "}, ";
 			jsonBlob += "\"type:\" " + this.GetType() + ", }";
@@ -131,7 +131,7 @@ namespace ECE461_CLI
 				CalculateScore();
 			}
 
-			string jsonBlob = "{\"URL\":\"\", \"NET_SCORE\":" + this.score + ", \"RAMP_UP_SCORE\":-1, \"CORRECTNESS_SCORE\":-1, \"BUS_FACTOR_SCORE\":-1, \"RESPONSIVE_MAINTAINER_SCORE\":-1, \"LICENSE_SCORE\":-1}";
+			string jsonBlob = "{\"URL\":\"\", \"NET_SCORE\":" + Math.Round(this.GetScore(), 2) + ", \"RAMP_UP_SCORE\":-1, \"CORRECTNESS_SCORE\":-1, \"BUS_FACTOR_SCORE\":-1, \"RESPONSIVE_MAINTAINER_SCORE\":-1, \"LICENSE_SCORE\":-1}";
 
 			return jsonBlob;
 		}
@@ -188,9 +188,9 @@ namespace ECE461_CLI
 				CalculateScore();
 			}
 
-			string jsonBlob = "{ \"URL\":" + this.url + ", \"NET_SCORE\":" + this.GetScore();
+			string jsonBlob = "{ \"URL\":" + this.url + ", \"NET_SCORE\":" + Math.Round(this.GetScore(),2);
 			foreach (Metric m in metrics) {
-				jsonBlob += ", \"" + m.name + "\":" + m.score;
+				jsonBlob += ", \"" + m.name + "\":" + m.GetScore();
 			}
 			jsonBlob += "}";
 

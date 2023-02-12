@@ -4,14 +4,17 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
+
+
+
 namespace ECE461_CLI
 {
-	
-	
+
+
 	public class Program
 	{	
 		// parameters
-		public const double REQUEST_TIMEOUT_TIME = 5;
+		public const double REQUEST_TIMEOUT_TIME = 10;
 
 
 
@@ -31,7 +34,7 @@ namespace ECE461_CLI
 				}
 			}
 
-			string log_file_env_var = Environment.GetEnvironmentVariable("LOG_LEVEL");
+			string log_file_env_var = Environment.GetEnvironmentVariable("LOG_FILE");
 			if (! (log_file_env_var is null) && log_file_env_var.Length > 0) {
 				LOG_FILE = log_file_env_var;
 			}
@@ -142,7 +145,7 @@ namespace ECE461_CLI
 			catch (DirectoryNotFoundException) { }
 			
 			if (args.Length == 0 || args[0].Length == 0) {
-				Console.WriteLine("Received " + args.Length + " cli arguments");
+				LogDebug("Received " + args.Length + " cli arguments");
 				prog.testRun();
 			}else{
 
@@ -203,11 +206,13 @@ namespace ECE461_CLI
 		public static void LogDebug(string msg) {
 			string outmsg = "[DEBUG] " + msg;
 
-			if (LOG_LEVEL >= 1) {
+			if (LOG_LEVEL >= 3)
+			{
 				Console.ForegroundColor = ConsoleColor.Gray;
 				Console.WriteLine(outmsg);
 				Console.ForegroundColor = ConsoleColor.White;
-
+			}
+			if (LOG_LEVEL >= 1) {
 				log.AppendLine(outmsg);
 			}
 		}
