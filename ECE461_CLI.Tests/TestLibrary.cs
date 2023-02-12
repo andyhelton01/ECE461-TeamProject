@@ -39,6 +39,8 @@ public class LibraryTests
 	{
 		Library lib = UrlLibrary.GetFromNpmUrl("https://www.npmjs.com/package/@kre-form/abc");
 		lib.GetScore();
+		lib.ToJson();
+		lib.ToOutput();
 	}
 
 	[Test]
