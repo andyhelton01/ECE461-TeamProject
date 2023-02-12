@@ -11,7 +11,7 @@ public class RampUpTests
     [Test]
     public async Task TestRampUpHighScore()
     {
-        GitUrlLibrary lib = new GitUrlLibrary("https://github.com/lodash/lodash");
+        GitUrlLibrary lib = new GitUrlLibrary("https://github.com/nodejs/node");
         Metric m = new RampUp(lib);
         await m.Calculate();
         Assert.That(m.score, Is.GreaterThan(0.7));
