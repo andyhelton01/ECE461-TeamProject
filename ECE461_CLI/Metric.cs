@@ -13,21 +13,21 @@ using Connection = Octokit.GraphQL.Connection;
 
 namespace ECE461_CLI
 {
-	public abstract class Metric
-	{
-		public GitUrlLibrary parentLibrary;
+    public abstract class Metric
+    {
+        public GitUrlLibrary parentLibrary;
 
-		public float score;
+        public float score;
 
-		public string name;
+        public string name;
 
-		public float weight; // must be overridden by child class
+        public float weight; // must be overridden by child class
 
-		public Metric(GitUrlLibrary parentLibrary)
-		{
-			this.parentLibrary = parentLibrary;
+        public Metric(GitUrlLibrary parentLibrary)
+        {
+            this.parentLibrary = parentLibrary;
 
-		}
+        }
         public float GetScore()
         {
             return (float)Math.Round(this.score, 2);
@@ -37,10 +37,10 @@ namespace ECE461_CLI
 		 * <summary> calculates the score for this metric
 		 */
         public abstract Task Calculate();
-        
 
 
-	}
+
+    }
 
     public class RampUp : Metric
     {
@@ -59,7 +59,8 @@ namespace ECE461_CLI
 
                 string access_token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
 
-                if (access_token is null || access_token.Length == 0) {
+                if (access_token is null || access_token.Length == 0)
+                {
                     Program.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
                     return;
                 }
@@ -79,16 +80,19 @@ namespace ECE461_CLI
 
                 var readme = await client.Repository.Content.GetReadmeHtml(repo.Id);
 
-                if (codeSize == 0) {
+                if (codeSize == 0)
+                {
                     Program.LogError("repository " + this.parentLibrary.owner + "/" + this.parentLibrary.name + " has a code size of zero");
                     this.score = 0;
-                
-                }else{
+
+                }
+                else
+                {
                     // this.score = Math.Min(1500 * readme.Length / codeSize, 1);
-                    this.score = 1 - (float)Math.Exp(-10*(float)readme.Length/(float)codeSize);
+                    this.score = 1 - (float)Math.Exp(-10 * (float)readme.Length / (float)codeSize);
                 }
 
-                
+
 
             }
             catch (Octokit.AuthorizationException)
@@ -111,7 +115,7 @@ namespace ECE461_CLI
             this.name = "CORRECTNESS_SCORE";
         }
 
-        
+
         public override async Task Calculate()
         {
 
@@ -119,7 +123,8 @@ namespace ECE461_CLI
             {
                 string access_token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
 
-                if (access_token is null || access_token.Length == 0) {
+                if (access_token is null || access_token.Length == 0)
+                {
                     Program.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
                     return;
                 }
@@ -154,7 +159,7 @@ namespace ECE461_CLI
                         case "in_progress":
                         case "queued":
                         case "pending":
-                            score += (float) 0.7;
+                            score += (float)0.7;
                             break;
                         case "neutral":
                         case "skipped":
@@ -169,9 +174,11 @@ namespace ECE461_CLI
                     count++;
                 }
 
-                if (count == 0) {
+                if (count == 0)
+                {
                     this.score = (float)0.4;
-                } else
+                }
+                else
                 {
                     this.score = score / count;
                 }
@@ -198,21 +205,23 @@ namespace ECE461_CLI
 
 
         public override async Task Calculate()
-        {	
+        {
 
-			try {
-                
+            try
+            {
+
                 string access_token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
 
-                if (access_token is null || access_token.Length == 0) {
+                if (access_token is null || access_token.Length == 0)
+                {
                     Program.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
                     return;
                 }
-                
-				
-				var client = new GitHubClient(new Octokit.ProductHeaderValue("ECE461_CLI"));
-				var tokenAuth = new Octokit.Credentials(access_token);
-				client.Credentials = tokenAuth;
+
+
+                var client = new GitHubClient(new Octokit.ProductHeaderValue("ECE461_CLI"));
+                var tokenAuth = new Octokit.Credentials(access_token);
+                client.Credentials = tokenAuth;
 
                 var repo = await client.Repository.Get(this.parentLibrary.owner, this.parentLibrary.name);
 
@@ -239,8 +248,9 @@ namespace ECE461_CLI
 
                 }
             }
-            catch (Octokit.AuthorizationException) {
-				Program.LogError("Bad credentials. Check your access token.");
+            catch (Octokit.AuthorizationException)
+            {
+                Program.LogError("Bad credentials. Check your access token.");
             }
             catch (Octokit.NotFoundException)
             {
@@ -249,14 +259,18 @@ namespace ECE461_CLI
         }
     }
 
-    public class BusFactor : Metric {
-        public BusFactor(GitUrlLibrary parentLibrary) : base(parentLibrary) {
+    public class BusFactor : Metric
+    {
+        public BusFactor(GitUrlLibrary parentLibrary) : base(parentLibrary)
+        {
             this.weight = 1;
             this.name = "BUS_FACTOR_SCORE";
         }
 
-        public override async Task Calculate() {
-            try {
+        public override async Task Calculate()
+        {
+            try
+            {
 
                 string access_token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
 
@@ -295,17 +309,23 @@ namespace ECE461_CLI
                 double metricCalc = 1 - Math.Exp(-(float)result.ForkCount / 200);
                 this.score = (float)metricCalc;
             }
-            catch (Octokit.AuthorizationException) {
+            catch (Octokit.AuthorizationException)
+            {
                 Program.LogError("Bad credentials. Check your access token.");
             }
             catch (Octokit.NotFoundException)
             {
                 Program.LogError("Non existent repository");
-            }            
+            }
         }
     }
     public class LicenseMetric : Metric
     {
+        
+        /// The list of compatible licenses with this project
+        string[] compatibleLicenses = {"mit"};
+
+        string[] incompatibleLicenses = {};
 
         public LicenseMetric(GitUrlLibrary parentLibrary) : base(parentLibrary)
         {
@@ -320,33 +340,57 @@ namespace ECE461_CLI
 
         public override async Task Calculate()
         {
-            try {
-                
+
+            try
+            {
+
                 string access_token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
 
-                if (access_token is null || access_token.Length == 0) {
+                if (access_token is null || access_token.Length == 0)
+                {
                     Program.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
                     return;
                 }
-                
-				
-				var client = new GitHubClient(new Octokit.ProductHeaderValue("ECE461_CLI"));
-				var tokenAuth = new Octokit.Credentials(access_token);
-				client.Credentials = tokenAuth;
+                // FIXME name and repo needs to be parsed from url
+                var client = new GitHubClient(new Octokit.ProductHeaderValue("ECE461_CLI"));
+                var tokenAuth = new Octokit.Credentials(access_token);
+                client.Credentials = tokenAuth;
 
-                this.score = -1;
+                var repo = await client.Repository.Get(this.parentLibrary.owner, this.parentLibrary.name);
+
+             
+            
+                string readme = await client.Repository.Content.GetReadmeHtml(repo.Id);
+                //string readme = (await client.Repository.Content.GetReadme(repo.Id)).Content;
+
+                // Console.WriteLine(readme);
+
+                string[] readmeLines = readme.Split("<");
+
+                List<string> licenseLines = new List<string>();
+
+                foreach (string line in readmeLines) {
+                    if (line.ToLower().Contains("license")) licenseLines.Add(line);
+                }
+                if (licenseLines.Count > 0) {
+                    
+
+
+                }else{
+                    this.score = 0;
+                }    
+
+
 
             }
-            catch (Octokit.AuthorizationException) {
-				Program.LogError("Bad credentials. Check your access token.");
+            catch (Octokit.AuthorizationException)
+            {
+                Program.LogError("Bad credentials. Check your access token.");
             }
             catch (Octokit.NotFoundException)
             {
                 Program.LogError("Non existent repository");
             }
-
-            
-        
         }
     }
 }
