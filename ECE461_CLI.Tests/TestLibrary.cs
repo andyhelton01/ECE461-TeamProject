@@ -40,7 +40,6 @@ public class LibraryTests
 		Library lib = UrlLibrary.GetFromNpmUrl("https://www.npmjs.com/package/@kre-form/abc");
 		lib.GetScore();
 		lib.ToJson();
-		lib.ToOutput();
 	}
 
 	[Test]
@@ -49,4 +48,12 @@ public class LibraryTests
 		Library lib = UrlLibrary.GetFromNpmUrl("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
 		lib.GetScore();
 	}
+
+    [Test]
+    public void TestLibraryToOutput()
+    {
+		Library lib = new Library("Bazim");
+        lib.ToOutput();
+    }
+
 }

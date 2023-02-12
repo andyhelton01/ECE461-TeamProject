@@ -51,4 +51,11 @@ public class FullStackTests
         Program.Main(args);
     }
 
+    [Test]
+    public void TestTestRun()
+    {
+        string[] args = { };
+        Program.Main(args);
+    }
+
 }
