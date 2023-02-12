@@ -9,11 +9,11 @@ using System.Threading;
 
 namespace ECE461_CLI
 {
-	
+
 	public class Library
 	{
-		
-		
+
+
 
 		public List<Metric> metrics = new List<Metric>();
 
@@ -23,7 +23,7 @@ namespace ECE461_CLI
 
 		public string name;
 
-		
+
 
 		bool isCalculated = false;
 		public Library(string name)
@@ -31,8 +31,9 @@ namespace ECE461_CLI
 			this.name = name;
 		}
 
-		
-		public virtual void addMetrics() {
+
+		public virtual void addMetrics()
+		{
 
 			// NOTE child addMetrics should add its own addMetrics before calling this class!
 
@@ -40,19 +41,23 @@ namespace ECE461_CLI
 			// HACK this may blow up the computer... not sure if we need to control the number of threads here
 			foreach (Metric m in metrics)
 			{
-				try {
+				try
+				{
 					calcMetricTaskQueue.Add(m.Calculate());
-				}catch(Exception e) {
+				}
+				catch (Exception e)
+				{
 					Program.LogError("An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos." + e.ToString());
 
-					
+
 				}
-					
+
 			}
 		}
 		protected float CalculateScore()
-		{ 
-			if (metrics.Count == 0) {
+		{
+			if (metrics.Count == 0)
+			{
 				addMetrics();
 			}
 
@@ -62,7 +67,8 @@ namespace ECE461_CLI
 			// calculate a weighted average of all the scores of the other metrics
 			float runningSum = 0;
 			float divisor = 0;
-			foreach (Metric m in metrics) {
+			foreach (Metric m in metrics)
+			{
 				runningSum += m.score == -1 ? 0 : m.weight * m.score;
 				divisor += m.weight;
 			}
@@ -70,25 +76,30 @@ namespace ECE461_CLI
 			if (divisor == 0) divisor = 1; // avoid a divide by zero (most likely because this lib has no metrics other than netscore)
 
 			this.score = runningSum / divisor;
-			
+
 			isCalculated = true;
-			
+
 			return this.score;
 		}
 
-		public void waitForCalculations() {
+		public void waitForCalculations()
+		{
 			// wait for tasks calculateTasks to finish
-			foreach(Task t in calcMetricTaskQueue) {
-				try{
+			foreach (Task t in calcMetricTaskQueue)
+			{
+				try
+				{
 					t.Wait(TimeSpan.FromSeconds(Program.REQUEST_TIMEOUT_TIME));
-		
-				}catch(Exception e) {
+
+				}
+				catch (Exception e)
+				{
 					Program.LogError("An unexpected Exception Occured. Please check your URL_FILE, and the validity of your repos." + e.ToString());
 
 				}
 			}
 
-			
+
 		}
 
 		/*
@@ -97,23 +108,25 @@ namespace ECE461_CLI
 		 */
 		public float GetScore()
 		{
-			if (! isCalculated) CalculateScore();
-			return score; 
+			if (!isCalculated) CalculateScore();
+			return score;
 		}
 
-	
+
 		/// <returns>a string representation of this library in JSON format</returns>
 		public string ToJson()
 		{
-	
 
-			if (metrics.Count == 0) {
+
+			if (metrics.Count == 0)
+			{
 				addMetrics();
 				CalculateScore();
 			}
 
 			string jsonBlob = "{ \"libraryName\": " + this.name + ", \"libraryScore\": " + Math.Round(this.GetScore(), 2) + ", \"metrics\": {";
-			foreach (Metric m in metrics) {
+			foreach (Metric m in metrics)
+			{
 				jsonBlob += "{\"name\": " + m.name + ", " + "\"score\": " + m.GetScore() + "}, ";
 			}
 			jsonBlob += "}, ";
@@ -123,10 +136,12 @@ namespace ECE461_CLI
 		}
 
 		/// <returns>a string representation of this library based on project specifications</returns>
-		public virtual string ToOutput() {
+		public virtual string ToOutput()
+		{
 			// since this is not a urlLibrary, we will be missing a lot of values
 
-			if (metrics.Count == 0) { // ensure we are ready to be outputted
+			if (metrics.Count == 0)
+			{ // ensure we are ready to be outputted
 				addMetrics();
 				CalculateScore();
 			}
@@ -141,14 +156,14 @@ namespace ECE461_CLI
 			return ToJson();
 		}
 
-		
+
 
 
 		public class LibraryComparer : IComparer<Library>
 		{
 			public int Compare(Library y, Library x)
 			{
-				
+
 				return x.GetScore().CompareTo(y.GetScore());
 			}
 		}
@@ -157,7 +172,8 @@ namespace ECE461_CLI
 
 
 
-	public class UrlLibrary : Library {
+	public class UrlLibrary : Library
+	{
 		/// <summary>
 		/// this is a library hosted on the internet
 		/// </summary>
@@ -168,7 +184,8 @@ namespace ECE461_CLI
 		static HttpClient httpClient = new HttpClient();
 		static JsonSerializerOptions jsonOptions = new JsonSerializerOptions(JsonSerializerDefaults.Web);
 
-		public UrlLibrary(string url) : base(url) {
+		public UrlLibrary(string url) : base(url)
+		{
 			this.url = url;
 
 			// TODO give this lib a better name please
@@ -177,32 +194,37 @@ namespace ECE461_CLI
 
 		}
 
-		
-		public virtual string GetUrl() {
+
+		public virtual string GetUrl()
+		{
 			return url;
 		}
 
-		public override string ToOutput() {
-			if (metrics.Count == 0) { // ensure we are ready to be outputted
+		public override string ToOutput()
+		{
+			if (metrics.Count == 0)
+			{ // ensure we are ready to be outputted
 				addMetrics();
 				CalculateScore();
 			}
 
-			string jsonBlob = "{ \"URL\":" + this.url + ", \"NET_SCORE\":" + Math.Round(this.GetScore(),2);
-			foreach (Metric m in metrics) {
+			string jsonBlob = "{ \"URL\":" + this.url + ", \"NET_SCORE\":" + Math.Round(this.GetScore(), 2);
+			foreach (Metric m in metrics)
+			{
 				jsonBlob += ", \"" + m.name + "\":" + m.GetScore();
 			}
 			jsonBlob += "}";
 
 			return jsonBlob;
 		}
-		
 
-		private async static Task<string> scrapeForGitUrl(string url) {
-				
+
+		private async static Task<string> scrapeForGitUrl(string url)
+		{
+
 			// get package name from url
 			string[] phrases = url.Split("/");
-			string packageName = phrases[phrases.Length-1];
+			string packageName = phrases[phrases.Length - 1];
 
 			using var client = new HttpClient();
 
@@ -210,83 +232,99 @@ namespace ECE461_CLI
 
 			// HACK this may be the least robust possible way of doing this 
 			string[] tokens = result.Split("\"");
-			foreach (string s in tokens) {
-				if (s.Contains("github.com")) {
+			foreach (string s in tokens)
+			{
+				if (s.Contains("github.com"))
+				{
 					return s;
 				}
 			}
 
 			return "no_url_found";
-			
+
 		}
 
-		public static Library GetFromNpmUrl(string url) {
+		public static Library GetFromNpmUrl(string url)
+		{
 
 			Task<string> urlScrape = scrapeForGitUrl(url);
 
-			try {
+			try
+			{
 				urlScrape.Wait(TimeSpan.FromSeconds(Program.REQUEST_TIMEOUT_TIME));
-			}catch(AggregateException) { // probably a 404 error
+			}
+			catch (AggregateException)
+			{ // probably a 404 error
 				Program.LogError("Invalid library url: " + url);
 				return null;
 			}
 			string gitUrl = urlScrape.Result;
-			
-			if (gitUrl == "no_url_found") {
+
+			if (gitUrl == "no_url_found")
+			{
 				return new NPMUrlLibrary(url);
-			}else{
+			}
+			else
+			{
 				return new NPMGitUrlLibrary(url, gitUrl);
 			}
 		}
 
-		
 
 
-		
+
+
 	}
 
-	public class GitUrlLibrary : UrlLibrary {
+	public class GitUrlLibrary : UrlLibrary
+	{
 		/// <summary>
 		/// this is a library that is hosted on github
 		/// </summary>
 
-		public string owner {get;}
+		public string owner { get; }
 
 
-		public GitUrlLibrary(string url) : base(url) {
-			
-		
-			
+		public GitUrlLibrary(string url) : base(url)
+		{
+
+
+
 			// get the user name and repository name
 			string[] phrases = url.Split("/");
-			if (phrases.Length <= 2 ) {
+			if (phrases.Length <= 2)
+			{
 				Program.LogError("Invalid github url: " + url);
 				this.owner = "invalid";
 				this.name = "invalid";
-			}else{
-				this.owner = phrases[phrases.Length-2];
-				this.name = phrases[phrases.Length-1];
-				if (this.name.Contains(".git")){
-					this.name = this.name.Substring(0,this.name.Length-4);
+			}
+			else
+			{
+				this.owner = phrases[phrases.Length - 2];
+				this.name = phrases[phrases.Length - 1];
+				if (this.name.Contains(".git"))
+				{
+					this.name = this.name.Substring(0, this.name.Length - 4);
 				}
 			}
 			// Console.WriteLine("Url: " + url);
 			// Console.WriteLine("Usrname: " + this.username + ", reponame: " + this.reponame);
 		}
 
-		
-		public override void addMetrics() {
+
+		public override void addMetrics()
+		{
 
 
 
-            // add metrics to metric list 
-            metrics.Add(new RampUp(this));
-            metrics.Add(new Correctness(this));
-            metrics.Add(new BusFactor(this));
-            metrics.Add(new ResponsiveMaintainer(this));
-            metrics.Add(new LicenseMetric(this));
+			// add metrics to metric list 
+			metrics.Add(new RampUp(this));
+			metrics.Add(new Correctness(this));
+			metrics.Add(new BusFactor(this));
+			metrics.Add(new ResponsiveMaintainer(this));
+			metrics.Add(new LicenseMetric(this));
 
-            base.addMetrics();
+			base.addMetrics();
 		}
 
 	}
@@ -308,17 +346,20 @@ namespace ECE461_CLI
 
 	}
 
-	public class NPMGitUrlLibrary : GitUrlLibrary {
+	public class NPMGitUrlLibrary : GitUrlLibrary
+	{
 		/// <summary>
 		/// this is a library with a npm url but is still hosted on github
 		/// </summary>
 
 		public string npmUrl;
-		public NPMGitUrlLibrary(string npmUrl, string gitUrl) : base(gitUrl) {
+		public NPMGitUrlLibrary(string npmUrl, string gitUrl) : base(gitUrl)
+		{
 			this.npmUrl = npmUrl;
 		}
 
-		public override string GetUrl() {
+		public override string GetUrl()
+		{
 			return npmUrl;
 		}
 	}
