@@ -31,3 +31,7 @@
 /ECE461_CLI.Tests/bin/*
 /ECE461_CLI.Tests/obj/*
 /ECE461_CLI.Tests/.vs/*
+
+# vs
+/.vs
+/.vscode
