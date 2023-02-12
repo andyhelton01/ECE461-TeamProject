@@ -11,7 +11,7 @@ public class CorrectnessTests
     [Test]
     public async Task TestCorrectnessHighScore()
     {
-        GitUrlLibrary lib = new GitUrlLibrary("https://github.com/pytorch/pytorch");
+        GitUrlLibrary lib = new GitUrlLibrary("https://github.com/lodash/lodash");
         Metric m = new Correctness(lib);
         await m.Calculate();
         Assert.That(m.score, Is.GreaterThan(0.7));
