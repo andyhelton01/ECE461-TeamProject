@@ -42,7 +42,7 @@ namespace ECE461_CLI
 			}
 		}
 
-		void testRun()
+		public void testRun()
 		{
 			LOG_LEVEL = 5;
 

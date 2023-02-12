@@ -24,7 +24,7 @@ public class LogTests
         Program.log.Clear();
         Program.LOG_LEVEL = 3;
         string warning = "some warning";
-        Program.LogError(warning);
+        Program.LogWarning(warning);
         String.Equals(Program.log.ToString(), "[WARNING]" + warning);
     }
 
@@ -34,7 +34,7 @@ public class LogTests
         Program.log.Clear();
         Program.LOG_LEVEL = 3;
         string info = "some info";
-        Program.LogError(info);
+        Program.LogInfo(info);
         String.Equals(Program.log.ToString(), "[INFO]" + info);
     }
 
@@ -44,7 +44,7 @@ public class LogTests
         Program.log.Clear();
         Program.LOG_LEVEL = 3;
         string debug = "some debug";
-        Program.LogError(debug);
+        Program.LogDebug(debug);
         String.Equals(Program.log.ToString(), "[DEBUG]" + debug);
     }
 
