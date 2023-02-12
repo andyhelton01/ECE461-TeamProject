@@ -323,20 +323,16 @@ namespace ECE461_CLI
     {
         
         /// The list of compatible licenses with this project
-        string[] compatibleLicenses = {"mit"};
+        string[] compatibleLicenses = {"mit", "lgpl 2.1", "lgpl 2.1+","bsd", "bsd-new", "x11", "public domain"};
 
-        string[] incompatibleLicenses = {};
+        string[] incompatibleLicenses = {"gplv2", "gplv2+", "gplv3", "gplv3+", "affero gplv3", "apache2.0", "mpl", "mpl 1.1"};
 
         public LicenseMetric(GitUrlLibrary parentLibrary) : base(parentLibrary)
         {
-            this.weight = 0;
+            this.weight = 1;
             this.name = "LICENSE_SCORE";
         }
 
-        private float Sigmoid(float x)
-        {
-            return 1 / (1 + (float)Math.Exp(-x));
-        }
 
         public override async Task Calculate()
         {
@@ -351,7 +347,7 @@ namespace ECE461_CLI
                     Program.LogError("access token not set. Ensure the env variable GITHUB_TOKEN is set");
                     return;
                 }
-                // FIXME name and repo needs to be parsed from url
+               
                 var client = new GitHubClient(new Octokit.ProductHeaderValue("ECE461_CLI"));
                 var tokenAuth = new Octokit.Credentials(access_token);
                 client.Credentials = tokenAuth;
@@ -369,14 +365,47 @@ namespace ECE461_CLI
 
                 List<string> licenseLines = new List<string>();
 
+                // search for all lines that mention a license
                 foreach (string line in readmeLines) {
-                    if (line.ToLower().Contains("license")) licenseLines.Add(line);
+                    if (line.ToLower().Contains("license")) licenseLines.Add(line.ToLower());
                 }
-                if (licenseLines.Count > 0) {
-                    
 
+                if (licenseLines.Count > 0) {
+                    // we have found lines mentioning a license, now we need to see whether it is compatible or not
+                    score = 0.5F;
+                    
+                    // search through all lines that could contain the license
+                    foreach (string line in licenseLines)
+					{
+                        // Program.LogDebug("Searching line " + line + "for licenses");
+                        // if we found a compatible license, increase the score
+                        foreach (string license in compatibleLicenses)
+						{
+                            if (line.Contains(license))
+							{
+                                Program.LogDebug("found compatible license: " + license);
+                                score += 0.5F;
+							}
+						}
+
+                        // if we found an incompatible license, decrease the score
+                        foreach(string license in incompatibleLicenses)
+						{
+                            if (line.Contains(license))
+							{
+                                Program.LogDebug("found incompatible license: " + license);
+                                score -= 0.5F;
+							}
+						}
+					}
+
+
+                    // make sure score is within acceptable range
+                    score = Math.Max(score, 0);
+                    score = Math.Min(score, 1);
 
                 }else{
+                    // if there is no license at all, set the score to zero
                     this.score = 0;
                 }    
 
