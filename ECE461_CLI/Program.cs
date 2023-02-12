@@ -146,7 +146,7 @@ namespace ECE461_CLI
 
 		}
 
-		static int Main(string[] args)
+		public static int Main(string[] args)
 		{
 			Program prog = new Program();
 			try
