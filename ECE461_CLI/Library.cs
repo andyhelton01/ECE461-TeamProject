@@ -208,7 +208,7 @@ namespace ECE461_CLI
 				CalculateScore();
 			}
 
-			string jsonBlob = "{ \"URL\":" + this.GetUrl() + ", \"NET_SCORE\":" + Math.Round(this.GetScore(), 2);
+			string jsonBlob = "{ \"URL\":\"" + this.GetUrl() + "\", \"NET_SCORE\":" + Math.Round(this.GetScore(), 2);
 			foreach (Metric m in metrics)
 			{
 				jsonBlob += ", \"" + m.name + "\":" + m.GetScore();
